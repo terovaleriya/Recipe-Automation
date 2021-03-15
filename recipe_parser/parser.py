@@ -31,12 +31,14 @@ class Soup:
         self.url = url
         self.soup = BeautifulSoup(page_data, "html.parser")
         self.recipe_content = self.soup.find('body', {'class': "recipes content"})
+        assert self.recipe_content is not None
 
 
 class Parser(Soup):
 
     def title(self) -> str:
         title = self.recipe_content.find('h1', {'class': "title"}).text
+        assert title is not None
         return normalize(title)
 
     def tags(self) -> List[Tag]:
@@ -48,13 +50,14 @@ class Parser(Soup):
             return all_tags
 
     def planning(self) -> Planing:
-        prep = self.recipe_content.find('span', {'itemprop': "prepTime"})
-        prep_time = prep.text.strip() if prep else None
-        cook = self.recipe_content.find('span', {'itemprop': "cookTime"})
-        cook_time = cook.text if cook else None
-        total = self.recipe_content.find('span', {'itemprop': "totalTime"})
-        total_time = total.text if total else None
-        serves = self.recipe_content.find('span', {'itemprop': "recipeYield"}).text
+        prep_time = self.recipe_content.find('span', {'itemprop': "prepTime"})
+        prep_time = prep_time.text.strip() if prep_time else None
+        cook_time = self.recipe_content.find('span', {'itemprop': "cookTime"})
+        cook_time = cook_time.text if cook_time else None
+        total_time = self.recipe_content.find('span', {'itemprop': "totalTime"})
+        total_time = total_time.text if total_time else None
+        serves = self.recipe_content.find('span', {'itemprop': "recipeYield"})
+        serves = serves.text if serves else None
 
         return Planing(normalize(prep_time), normalize(cook_time), normalize(total_time), normalize(serves))
 
@@ -62,7 +65,9 @@ class Parser(Soup):
         ingredients = self.recipe_content.find('div', {'itemprop': "ingredients"})
         all_ingredients: List[Ingredient] = []
         for ingredient in ingredients.text.split("\n"):
-            all_ingredients.append(Ingredient(normalize(ingredient)))
+            if ingredient:
+                all_ingredients.append(Ingredient(normalize(ingredient)))
+        assert all_ingredients is not None
         return all_ingredients
 
     def instructions(self) -> List[Step]:
@@ -70,15 +75,19 @@ class Parser(Soup):
 
         all_instructions: List[Step] = []
 
-        for child in instructions.findAll('p'):
-            all_instructions.append(Step(normalize(child.text)))
+        for step in instructions.findAll('p'):
+            if step:
+                all_instructions.append(Step(normalize(step.text)))
+        assert all_instructions is not None
         return all_instructions
 
-    def images(self) -> str:
-        images = self.recipe_content.find('img')
+    def images(self) -> List[str]:
+        images = self.recipe_content.findAll('img', {'title': self.title()})
+        all_images: List[str] = []
         if images:
-            image = images.parent.find("img", {"src": True})
-            return image["src"] if image else ""
+            for image in images:
+                all_images.append(image["src"])
+        return all_images
 
     def nutrition(self) -> dict:
         table = self.recipe_content.find('div', {'itemprop': "nutrition"})
@@ -89,7 +98,7 @@ class Parser(Soup):
                       self.nutrition(), self.images())
 
     # getting json out of parsed Recipe
-    def get_json(self) -> json:
+    def get_json(self):
         recipe = self.recipe()
         with open('recipe_json.txt', 'w') as outfile:
             json.dump(recipe.__dict__, outfile, default=lambda o: o.__dict__, ensure_ascii=False, indent=4)
