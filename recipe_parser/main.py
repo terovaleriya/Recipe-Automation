@@ -9,7 +9,7 @@ url = 'https://www.waitrose.com/content/waitrose/en/home/recipes/recipe_director
 # print(Parser(url).tags())
 # print(Parser(url).planning())
 # print(Parser(url).nutrition())
-print(Parser(url).ingredients())
+# print(Parser(url).ingredients())
 # print(Parser(url).instructions())
 # print(Parser(url).images())
 
