@@ -59,7 +59,6 @@ class Recipe:
         self.title = title
         self.tags = tags
         self.planning = planning
-        self.nutrition = nutrition
         self.ingredients = ingredients
         self.instructions = instructions
         self.nutrition = nutrition
