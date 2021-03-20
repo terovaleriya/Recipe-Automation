@@ -5,22 +5,21 @@ from recipe_parser.parser import Soup
 url = "https://www.waitrose.com/content/waitrose/en/home/recipes.html"
 
 # достаем список категорий
-categories = Soup(url).soup.find('div', {'class': "l-content"}).findAll("a", href=re.compile("/home/recipes_html/.+$"))
+soup = Soup(url).soup.find('div', {'class': "l-content"})
+categories = soup.findAll("a", href=re.compile("/home/recipes/.+$"))
 categories = [category['href'] for category in categories]
 categories = [category if category.startswith("https://www.waitrose.com") else 'https://www.waitrose.com' + category for
               category in categories]
 categories = set(categories)
 
 # из каждой категории достаем все рецепты
-# recipes_per_category.txt – распределение рецептов по категориям, url могут повторяться
+# recipes_per_category_*.txt – распределение рецептов по категориям, url могут повторяться
 #
-
-all_recipes = set()
-distribution = open('recipes_per_category.txt', 'w')
+all_recipes = []
+distribution = open('files/recipes_per_category_A4.txt', 'w')
 for category in categories:
     category_soup = Soup(category).soup
-    recipes = category_soup.findAll("a", href=re.compile("/home/recipes_html/recipe_directory.+$"))
-
+    recipes = category_soup.findAll("a", href=re.compile("/home/recipes/recipe_directory.+$"))
     distribution.write("\nКатегория: " + category + "\n")
     distribution.write("Рецептов в категории: " + str(len(recipes)) + "\n")
 
@@ -30,11 +29,17 @@ for category in categories:
         for recipe in recipes]
     recipes = [re.findall('.+?\.html', recipe)[0] for recipe in recipes]
     distribution.write("Url рецептов: " + "\n".join(recipes) + "\n")
-    all_recipes |= set(recipes)
+    all_recipes.extend(recipes)
 distribution.close()
 
-# recipes_urls.txt – уникальный список всех url рецептов
-with open('recipes_urls.txt', 'w') as f:
+# превращаем полученный url в А4-url
+all_recipes = [recipe[:-5] + ".A4" + recipe[-5:] for recipe in all_recipes]
+
+# избавляемся от дубликатов
+all_recipes = set(all_recipes)
+
+# recipes_urls_*.txt – уникальный список всех url рецептов
+with open('files/recipes_urls_A4.txt', 'w') as f:
     for recipe_url in all_recipes:
         f.write(recipe_url + "\n")
 f.close()

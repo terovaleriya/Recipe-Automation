@@ -15,6 +15,8 @@ def normalize(string: str):
     if string:
         unescaped_string = html.unescape(string)
         return re.sub(r"\s+", " ", unescaped_string.replace("\xa0", " ")
+                      .replace("Â", "")
+                      .replace("â ", "' ")
                       .replace("\n", " ")  # &nbsp;
                       .replace("\t", " ")
                       .strip(),
@@ -22,15 +24,16 @@ def normalize(string: str):
 
 
 class Soup:
-    def __init__(self, url, test: bool = False):
-        if test:  # when testing, we load a file
+    def __init__(self, url, file: bool = False):
+        if file:  # when testing, we load a file
             page_data = url.read()
             url = None
         else:
-            logging.basicConfig(level=logging.DEBUG)
+            # logging.basicConfig(level=logging.DEBUG)
 
             s = requests.Session()
-            retries = Retry(total=5, backoff_factor=1, status_forcelist=[502, 503, 504])
+            status_forcelist = tuple(x for x in requests.status_codes._codes if x != 200)
+            retries = Retry(total=5, backoff_factor=1, status_forcelist=status_forcelist, raise_on_status=True)
             s.mount('http://', HTTPAdapter(max_retries=retries))
 
             page_data = s.get(url).text
@@ -41,12 +44,14 @@ class Soup:
 
 class Parser(Soup):
     def recipe_content(self):
-        recipe_content = self.soup.find('body', {'class': "recipes_html content"})
+        recipe_content = self.soup.find('div', {'itemtype': "http://schema.org/Recipe"})
+        # if recipe_content is None:
+        #     print(recipe_content)
         assert recipe_content is not None
         return recipe_content
 
     def title(self) -> str:
-        title = self.recipe_content().find('h1', {'class': "title"}).text
+        title = self.recipe_content().find('h2').text
         assert title is not None
         return title
 
@@ -60,43 +65,45 @@ class Parser(Soup):
 
     def planning(self) -> Planing:
         prep_time = self.recipe_content().find('span', {'itemprop': "prepTime"})
-        prep_time = prep_time.text.strip() if prep_time else None
+        prep_time = prep_time["content"] if prep_time else None
         cook_time = self.recipe_content().find('span', {'itemprop': "cookTime"})
-        cook_time = cook_time.text if cook_time else None
+        cook_time = cook_time["content"] if cook_time else None
         total_time = self.recipe_content().find('span', {'itemprop': "totalTime"})
-        total_time = total_time.text if total_time else None
+        total_time = total_time["content"] if total_time else None
         serves = self.recipe_content().find('span', {'itemprop': "recipeYield"})
         serves = serves.text if serves else None
 
         return Planing(normalize(prep_time), normalize(cook_time), normalize(total_time), normalize(serves))
 
     def ingredients(self) -> List[Ingredient]:
-        ingredients = self.recipe_content().find('div', {'itemprop': "ingredients"})
+        ingredients = self.recipe_content()
+        ingredients = ingredients.find("div", {'class', re.compile('parbase ingredients text.*')})
         all_ingredients: List[Ingredient] = []
+        if not ingredients:
+            print(ingredients)
         for ingredient in ingredients.text.split("\n"):
             if ingredient:
-                all_ingredients.append(Ingredient(ingredient))
+                all_ingredients.append(Ingredient(normalize(ingredient)))
+                # print(parse(normalize(ingredient)))
+                # print(normalize(ingredient) + "\n\n")
         assert all_ingredients is not None
         return all_ingredients
 
     def instructions(self) -> List[Step]:
-        instructions = self.recipe_content().find('div', {'class': "method"})
+        instructions = self.recipe_content().find('div', {'class', re.compile("method parbase text.*")})
 
         all_instructions: List[Step] = []
 
         for step in instructions.findAll('p'):
             if step:
-                all_instructions.append(Step(step.text))
+                all_instructions.append(Step(normalize(step.text)))
         assert all_instructions is not None
         return all_instructions
 
-    # def images(self) -> List[str]:
-    #     images = self.recipe_content().findAll('img', {'title': self.title()})
-    #     all_images: List[str] = []
-    #     if images:
-    #         for image in images:
-    #             all_images.append(image["src"])
-    #     return all_images
+    def image(self) -> str:
+        image = self.recipe_content().find('img')["src"]
+        image = image.replace("200.200", "400.400")
+        return image
 
     def nutrition(self) -> dict:
         table = self.recipe_content().find('div', {'itemprop': "nutrition"})
@@ -107,12 +114,9 @@ class Parser(Soup):
 
     def recipe(self):
         return Recipe(self.title(), self.tags(), self.planning(), self.ingredients(), self.instructions(),
-                      self.nutrition()
-                      # ,self.images()
-                      )
+                      self.nutrition(), self.image())
 
-        # getting json out of parsed Recipe
-
+    # getting json out of parsed Recipe
     def get_json(self):
         recipe = self.recipe()
         with open('recipe_json.txt', 'w') as outfile:
