@@ -55,14 +55,16 @@ class Planing:
 
 class Recipe:
     def __init__(self, title: str, tags: List[Tag], planning: Planing, ingredients: List[Ingredient],
-                 instructions: List[Step], nutrition: dict, images_url: List[str]):
+                 instructions: List[Step], nutrition: dict
+                 # , images_url: List[str]
+                 ):
         self.title = title
         self.tags = tags
         self.planning = planning
         self.ingredients = ingredients
         self.instructions = instructions
         self.nutrition = nutrition
-        self.images_url = images_url
+        # self.images_url = images_url
 
     def __str__(self):
         recipe = "\n" + self.title + "\n\n"
@@ -73,5 +75,5 @@ class Recipe:
         recipe += '\n'.join([str(i).strip() for i in self.ingredients]) + "\n\n"
         recipe += '\n'.join([str(x) for x in self.instructions]) + "\n\n"
         recipe += '\n'.join([El + ": " + x for El, x in zip(self.nutrition.keys(), self.nutrition.values())]) + "\n\n"
-        recipe += '\n'.join([str(i) for i in self.images_url])
+        # recipe += '\n'.join([str(i) for i in self.images_url])
         return recipe

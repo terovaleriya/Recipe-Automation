@@ -34,7 +34,7 @@ class test_Parser_beef(unittest.TestCase):
                             'Sugars': '17g',
                             'Protein': '44g', 'Salt': '1.3g', 'Fibre': '8g'},
                            [
-                               "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/p/WW-Pulled-Beef-Mint-Avocado-Salad-Shroud.gif/_jcr_content/renditions/cq5dam.thumbnail.200.200.png"])
+                               "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes_html/images/p/WW-Pulled-Beef-Mint-Avocado-Salad-Shroud.gif/_jcr_content/renditions/cq5dam.thumbnail.200.200.png"])
         if not self.assertEqual(str(my_recipe), str(recipe)):
             self.assertEqual(my_recipe.title, recipe.title)
             self.assertEqual(my_recipe.tags, recipe.tags)
@@ -114,7 +114,7 @@ class test_Parser_beef(unittest.TestCase):
                     }
                 ],
                 "images_url": [
-                    "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/p/WW-Pulled-Beef-Mint-Avocado-Salad-Shroud.gif/_jcr_content/renditions/cq5dam.thumbnail.200.200.png"
+                    "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes_html/images/p/WW-Pulled-Beef-Mint-Avocado-Salad-Shroud.gif/_jcr_content/renditions/cq5dam.thumbnail.200.200.png"
                 ]
             })
         self.assertEqual(my_jsonStr, jsonStr)

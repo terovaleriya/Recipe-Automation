@@ -1,20 +1,24 @@
 import html
 import json
+import logging
 import re
 
 import requests
 from bs4 import BeautifulSoup
+from requests.adapters import HTTPAdapter
+from urllib3 import Retry
 
 from recipe_parser.recipe import *
 
 
 def normalize(string: str):
-    unescaped_string = html.unescape(string)
-    return re.sub(r"\s+", " ", unescaped_string.replace("\xa0", " ")
-                  .replace("\n", " ")  # &nbsp;
-                  .replace("\t", " ")
-                  .strip(),
-                  )
+    if string:
+        unescaped_string = html.unescape(string)
+        return re.sub(r"\s+", " ", unescaped_string.replace("\xa0", " ")
+                      .replace("\n", " ")  # &nbsp;
+                      .replace("\t", " ")
+                      .strip(),
+                      )
 
 
 class Soup:
@@ -23,18 +27,21 @@ class Soup:
             page_data = url.read()
             url = None
         else:
-            get = requests.get(url)
-            while get.status_code != 200:
-                get = requests.get(url)
-            assert get.status_code == 200
-            page_data = get.text
+            logging.basicConfig(level=logging.DEBUG)
+
+            s = requests.Session()
+            retries = Retry(total=5, backoff_factor=1, status_forcelist=[502, 503, 504])
+            s.mount('http://', HTTPAdapter(max_retries=retries))
+
+            page_data = s.get(url).text
+
         self.url = url
         self.soup = BeautifulSoup(page_data, "html.parser")
 
 
 class Parser(Soup):
     def recipe_content(self):
-        recipe_content = self.soup.find('body', {'class': "recipes content"})
+        recipe_content = self.soup.find('body', {'class': "recipes_html content"})
         assert recipe_content is not None
         return recipe_content
 
@@ -83,13 +90,13 @@ class Parser(Soup):
         assert all_instructions is not None
         return all_instructions
 
-    def images(self) -> List[str]:
-        images = self.recipe_content().findAll('img', {'title': self.title()})
-        all_images: List[str] = []
-        if images:
-            for image in images:
-                all_images.append(image["src"])
-        return all_images
+    # def images(self) -> List[str]:
+    #     images = self.recipe_content().findAll('img', {'title': self.title()})
+    #     all_images: List[str] = []
+    #     if images:
+    #         for image in images:
+    #             all_images.append(image["src"])
+    #     return all_images
 
     def nutrition(self) -> dict:
         table = self.recipe_content().find('div', {'itemprop': "nutrition"})
@@ -100,9 +107,12 @@ class Parser(Soup):
 
     def recipe(self):
         return Recipe(self.title(), self.tags(), self.planning(), self.ingredients(), self.instructions(),
-                      self.nutrition(), self.images())
+                      self.nutrition()
+                      # ,self.images()
+                      )
 
-    # getting json out of parsed Recipe
+        # getting json out of parsed Recipe
+
     def get_json(self):
         recipe = self.recipe()
         with open('recipe_json.txt', 'w') as outfile:
