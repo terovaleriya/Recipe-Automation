@@ -1,0 +1,13 @@
+UOM = mg | g | kg | litre | ml | cl | m | mm | cm | ltr | oz
+UOMCOOK = UOMCOOKMODIF UOMCOOK | tbsp | tsp
+UOMCOOKMODIF = heaped
+DISCRETE = s | each | roll | rolls | sheet | sheets | bunch | bunches | pair | pairs | pack | leaf | leaves
+NUMBER = default | NUMBER DENOMINATOR
+DENOMINATOR = ⁄ NUMBER | / NUMBER
+MODIFIER = minimum | min
+QUANTITY = NUMBER | NUMBER UOM | NUMBER UOMCOOK | NUMBER DISCRETE | XNUMBER QUANTITY | MODIFIER QUANTITY
+XNUMBER = NUMBER x | NUMBER \_
+OTHER = per\_kg | each | a\_pinch\_of | pinch | pinch\_of
+CONTAINER = pack | tub | bag | jar
+ITEM = QUANTITY CONTAINER
+RESULT = QUANTITY | ITEM | OTHER

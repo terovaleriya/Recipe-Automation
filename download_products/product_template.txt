@@ -1,0 +1,30 @@
+resultType: no
+id: yes
+lineNumber: no
+productType: no
+name: yes
+size: yes
+thumbnail: no
+reviews: no
+currentSaleUnitPrice: yes
+    quantity: yes
+    price: yes
+defaultQuantity: yes
+typicalWeight: no
+promotions: no
+persistDefault: no
+displayPrice: no
+displayPriceEstimated: no
+displayPriceQualifier: no
+leadTime: no
+maxPersonalisedMessageLength: no
+productImageUrls: no
+weights: yes
+    uoms: yes
+    pricePerUomQualifier: yes
+restriction: no
+substitutionsProhibited: no
+customerProductDetails: no
+markedForDelete: no
+cqResponsive: no
+sponsored: no
