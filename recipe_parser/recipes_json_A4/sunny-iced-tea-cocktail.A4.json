@@ -1,1 +1,43 @@
-{"title": "Sunny iced tea cocktail", "tags": null, "planning": {"prep_time": null, "cook_time": null, "total_time": "PT10 minutes + chillingM", "serves": "2"}, "ingredients": [{"item": "2 Twinings Earl Grey teabags"}, {"item": "2 tsp caster sugar"}, {"item": "4 tbsp vermouth rosso chilled"}, {"item": "4 tbsp vodka chilled"}, {"item": "Juice of ½ lemon"}, {"item": "Ice cubes"}, {"item": "2 sprigs of rosemary and 1 lemon thinly sliced, to serve"}], "instructions": [{"step": "1. Steep the teabags in a jug with 300ml boiling water for 8 minutes. Remove the teabags. Stir in the caster sugar, leave to cool then chill."}, {"step": "2. Pour the chilled tea into a jug, stir in the vermouth, vodka, lemon juice and plenty of ice. 3. Pour into chilled glasses or tea cups and serve with sprigs of rosemary and slices of lemon."}], "nutrition": null, "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/s/EarlySummerDM2017_SunnyIcedTeaCocktail.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"}
+{
+  "title": "Sunny iced tea cocktail",
+  "tags": null,
+  "planning": {
+    "prep_time": null,
+    "cook_time": null,
+    "total_time": "PT10 minutes + chillingM",
+    "serves": "2"
+  },
+  "ingredients": [
+    {
+      "item": "2 Twinings Earl Grey teabags"
+    },
+    {
+      "item": "2 tsp caster sugar"
+    },
+    {
+      "item": "4 tbsp vermouth rosso chilled"
+    },
+    {
+      "item": "4 tbsp vodka chilled"
+    },
+    {
+      "item": "Juice of Â½ lemon"
+    },
+    {
+      "item": "Ice cubes"
+    },
+    {
+      "item": "2 sprigs of rosemary and 1 lemon thinly sliced, to serve"
+    }
+  ],
+  "instructions": [
+    {
+      "step": "1. Steep the teabags in a jug with 300ml boiling water for 8 minutes. Remove the teabags. Stir in the caster sugar, leave to cool then chill."
+    },
+    {
+      "step": "2. Pour the chilled tea into a jug, stir in the vermouth, vodka, lemon juice and plenty of ice. \n\n3. Pour into chilled glasses or tea cups and serve with sprigs of rosemary and slices of lemon."
+    }
+  ],
+  "nutrition": null,
+  "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/s/EarlySummerDM2017_SunnyIcedTeaCocktail.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"
+}

@@ -1,1 +1,55 @@
-{"title": "Butternut and tomato lasagne", "tags": [{"tag": "Vegetarian"}], "planning": {"prep_time": "PT20M", "cook_time": "PT1 hour 15 minutesM", "total_time": "PT1 hour 35 minutesM", "serves": "6"}, "ingredients": [{"item": "2kg butternut squash"}, {"item": "1 tbsp olive oil"}, {"item": "1 onion, chopped"}, {"item": "1 1/2 tbsp chopped fresh oregano"}, {"item": "2 cloves garlic, crushed"}, {"item": "800g can essential Waitrose Chopped Tomatoes"}, {"item": "9 sheets dried lasagne"}, {"item": "500g tub essential Waitrose Cheese Sauce"}, {"item": "25g Parmigiano Reggiano, or vegetarian alternative"}], "instructions": [], "nutrition": {"Energy": "1,730kj 411kcals", "Fat": "12.4g", "Saturated Fat": "5.9g", "Carbohydrate": "59.5g", "Sugars": "22.7g", "Protein": "15.3g", "Salt": "0.9g", "Fibre": "8.1g"}, "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/b/Butternut-tomato-lasagne-2048.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"}
+{
+  "title": "Butternut and tomato lasagne",
+  "tags": [
+    {
+      "tag": "Vegetarian"
+    }
+  ],
+  "planning": {
+    "prep_time": "PT20M",
+    "cook_time": "PT1 hour 15 minutesM",
+    "total_time": "PT1 hour 35 minutesM",
+    "serves": "6"
+  },
+  "ingredients": [
+    {
+      "item": "2kg butternut squash"
+    },
+    {
+      "item": "1 tbsp olive oil"
+    },
+    {
+      "item": "1 onion, chopped"
+    },
+    {
+      "item": "1 1/2 tbsp chopped fresh oregano"
+    },
+    {
+      "item": "2 cloves garlic, crushed"
+    },
+    {
+      "item": "800g can essential Waitrose Chopped Tomatoes"
+    },
+    {
+      "item": "9 sheets dried lasagne"
+    },
+    {
+      "item": "500g tub essential Waitrose Cheese Sauce"
+    },
+    {
+      "item": "25g Parmigiano Reggiano, or vegetarian alternative"
+    }
+  ],
+  "instructions": [],
+  "nutrition": {
+    "Energy": "1,730kj 411kcals",
+    "Fat": "12.4g",
+    "Saturated Fat": "5.9g",
+    "Carbohydrate": "59.5g",
+    "Sugars": "22.7g",
+    "Protein": "15.3g",
+    "Salt": "0.9g",
+    "Fibre": "8.1g"
+  },
+  "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/b/Butternut-tomato-lasagne-2048.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"
+}

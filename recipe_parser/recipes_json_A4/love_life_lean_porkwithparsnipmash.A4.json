@@ -1,1 +1,47 @@
-{"title": "Lean pork with parsnip mash", "tags": null, "planning": {"prep_time": null, "cook_time": null, "total_time": null, "serves": "2"}, "ingredients": [{"item": "300g parsnips, peeled and thickly sliced"}, {"item": "1 tsp olive oil"}, {"item": "2 thinly sliced free-range pork escalopes"}, {"item": "½â1 tsp Bart Garam Masala"}, {"item": "30g Dried Apple Slices, roughly chopped"}, {"item": "2 tbsp essential Waitrose Low Fat Natural Yogurt"}, {"item": "2 salad onions, thinly sliced"}], "instructions": [{"step": "1. Cook the parsnips in boiling water for 8â10 minutes until tender. 2. Meanwhile, brush a non-stick griddle pan with olive oil. Cook the pork escalopes for 4â5 minutes on each side until browned and cooked through. Transfer to warm plates and leave to rest. 3. Drain the parsnips well then return to the pan and mash until smooth. Stir in the garam masala, dried apple, yogurt and salad onions. Serve with the pork steaks and a little essential Waitrose Bramley Apple Sauce, if you wish."}], "nutrition": {"Energy": "1175.704kJ 281kcals", "Fat": "6.3g", "Saturated Fat": "1.7g", "Carbohydrate": "31.3g", "Sugars": "20.2g", "Salt": "0.3g"}, "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/l/PorkEscalope158167.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"}
+{
+   "title": "Lean pork with parsnip mash",
+   "tags": null,
+   "planning": {
+      "prep_time": null,
+      "cook_time": null,
+      "total_time": null,
+      "serves": "2"
+   },
+   "ingredients": [
+      {
+         "item": "300g parsnips, peeled and thickly sliced"
+      },
+      {
+         "item": "1 tsp olive oil"
+      },
+      {
+         "item": "2 thinly sliced free-range pork escalopes"
+      },
+      {
+         "item": "½–1 tsp Bart Garam Masala"
+      },
+      {
+         "item": "30g Dried Apple Slices, roughly chopped"
+      },
+      {
+         "item": "2 tbsp essential Waitrose Low Fat Natural Yogurt"
+      },
+      {
+         "item": "2 salad onions, thinly sliced"
+      }
+   ],
+   "instructions": [
+      {
+         "step": "1. Cook the parsnips in boiling water for 8–10 minutes until tender. \n\n2. Meanwhile, brush a non-stick griddle pan with olive oil. Cook the pork escalopes for 4–5 minutes on each side until browned and cooked through. Transfer to warm plates and leave to rest.     \n\n3. Drain the parsnips well then return to the pan and mash until smooth. Stir in the garam masala, dried apple, yogurt and salad onions. Serve with the pork steaks and a little essential Waitrose Bramley Apple Sauce, if you wish."
+      }
+   ],
+   "nutrition": {
+      "Energy": "1175.704kJ 281kcals",
+      "Fat": "6.3g",
+      "Saturated Fat": "1.7g",
+      "Carbohydrate": "31.3g",
+      "Sugars": "20.2g",
+      "Salt": "0.3g"
+   },
+   "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/l/PorkEscalope158167.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"
+}

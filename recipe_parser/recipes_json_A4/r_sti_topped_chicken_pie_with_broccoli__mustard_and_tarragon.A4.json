@@ -1,1 +1,45 @@
-{"title": "RÃ¶sti-topped chicken pie With broccoli, mustard and tarragon", "tags": null, "planning": {"prep_time": "PT15M", "cook_time": "PT35M", "total_time": "PT50M", "serves": "4"}, "ingredients": [{"item": "125g tenderstem broccoli spears, cut into 2.5cm lengths"}, {"item": "1 tbsp olive oil"}, {"item": "1 onion, halved and thinly sliced"}, {"item": "1 tbsp wholegrain mustard"}, {"item": "300g Waitrose Half Fat CrÃ¨me FraÃ®che"}, {"item": "4 Waitrose British Chicken Breast Fillets, cut into chunks"}, {"item": "½ x 15g pack fresh tarragon, roughly chopped"}, {"item": "400g pack Waitrose Swiss Style RÃ¶sti, from the grocery section"}], "instructions": [], "nutrition": {"Energy": "1933.008kJ 462.0kcal", "Fat": "21.7g", "Saturated Fat": "9.2g", "Sugars": "6.1g", "Salt": "1.7g"}, "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/r/_4-Rosti-pie-_2048x2048.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"}
+{
+   "title": "Rösti-topped chicken pie With broccoli, mustard and tarragon",
+   "tags": null,
+   "planning": {
+      "prep_time": "PT15M",
+      "cook_time": "PT35M",
+      "total_time": "PT50M",
+      "serves": "4"
+   },
+   "ingredients": [
+      {
+         "item": "125g tenderstem broccoli spears, cut into 2.5cm lengths"
+      },
+      {
+         "item": "1 tbsp olive oil"
+      },
+      {
+         "item": "1 onion, halved and thinly sliced"
+      },
+      {
+         "item": "1 tbsp wholegrain mustard"
+      },
+      {
+         "item": "300g Waitrose Half Fat Crème Fraîche"
+      },
+      {
+         "item": "4 Waitrose British Chicken Breast Fillets, cut into chunks"
+      },
+      {
+         "item": "½ x 15g pack fresh tarragon, roughly chopped"
+      },
+      {
+         "item": "400g pack Waitrose Swiss Style Rösti, from the grocery section"
+      }
+   ],
+   "instructions": [],
+   "nutrition": {
+      "Energy": "1933.008kJ 462.0kcal",
+      "Fat": "21.7g",
+      "Saturated Fat": "9.2g",
+      "Sugars": "6.1g",
+      "Salt": "1.7g"
+   },
+   "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/r/_4-Rosti-pie-_2048x2048.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"
+}

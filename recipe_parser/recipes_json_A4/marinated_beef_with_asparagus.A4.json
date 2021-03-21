@@ -1,1 +1,55 @@
-{"title": "Marinated Beef with Asparagus", "tags": [{"tag": "Diabetic"}], "planning": {"prep_time": "PT10 minutes, plus marinating overnightM", "cook_time": "PT40 minutes (for rare), plus 15-20 minutes restingM", "total_time": "PT55 minutes to an hour, plus marinating overnightM", "serves": "8"}, "ingredients": [{"item": "2 large cloves garlic, crushed"}, {"item": "2 medium red chillies, deseeded and finely chopped"}, {"item": "2 tbsp grainy mustard"}, {"item": "200ml Waitrose Balsamic Vinegar of Modena"}, {"item": "1kg piece fillet steak, Aberdeen Angus or British, from the meat service counter"}, {"item": "A little olive oil for searing"}, {"item": "For the asparagus"}, {"item": "750g asparagus spears, trimmed"}, {"item": "100g butter"}, {"item": "Finely grated zest and juice of 1 lemon"}], "instructions": [], "nutrition": {"Energy": "1435.112kJ 343.0kcal", "Fat": "20.8g", "Saturated Fat": "10.9g", "Sugars": "2.7g", "Salt": "0.5g"}, "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/m/0605ss32-r03.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"}
+{
+  "title": "Marinated Beef with Asparagus",
+  "tags": [
+    {
+      "tag": "Diabetic"
+    }
+  ],
+  "planning": {
+    "prep_time": "PT10 minutes, plus marinating overnightM",
+    "cook_time": "PT40 minutes (for rare), plus 15-20 minutes restingM",
+    "total_time": "PT55 minutes to an hour, plus marinating overnightM",
+    "serves": "8"
+  },
+  "ingredients": [
+    {
+      "item": "2 large cloves garlic, crushed"
+    },
+    {
+      "item": "2 medium red chillies, deseeded and finely chopped"
+    },
+    {
+      "item": "2 tbsp grainy mustard"
+    },
+    {
+      "item": "200ml Waitrose Balsamic Vinegar of Modena"
+    },
+    {
+      "item": "1kg piece fillet steak, Aberdeen Angus or British, from the meat service counter"
+    },
+    {
+      "item": "A little olive oil for searing"
+    },
+    {
+      "item": "For the asparagus"
+    },
+    {
+      "item": "750g asparagus spears, trimmed"
+    },
+    {
+      "item": "100g butter"
+    },
+    {
+      "item": "Finely grated zest and juice of 1 lemon"
+    }
+  ],
+  "instructions": [],
+  "nutrition": {
+    "Energy": "1435.112kJ 343.0kcal",
+    "Fat": "20.8g",
+    "Saturated Fat": "10.9g",
+    "Sugars": "2.7g",
+    "Salt": "0.5g"
+  },
+  "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/m/0605ss32-r03.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"
+}

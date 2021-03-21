@@ -1,1 +1,49 @@
-{"title": "Pear Galettes with a Belgian Chocolate Sauce", "tags": [{"tag": "Vegetarian"}, {"tag": "Nut Free"}], "planning": {"prep_time": "PT15M", "cook_time": "PT30M", "total_time": "PT45M", "serves": "6"}, "ingredients": [{"item": "500g pack Jus-Rol Puff Pastry"}, {"item": "100g ground almonds"}, {"item": "3 tbsp Copella Apple and Pear Juice"}, {"item": "3 pears, washed, halved and quartered, cored and thinly sliced"}, {"item": "2 tbsp clear honey"}, {"item": "3 tbsp apricot jam"}, {"item": "300g pouch Waitrose Belgian Chocolate Sauce, to serve"}], "instructions": [], "nutrition": {"Energy": "2723.784kJ 651.0kcal", "Fat": "34.4g", "Saturated Fat": "16.0g", "Sugars": "51.7g", "Salt": "1.0g"}, "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/p/0809r07.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"}
+{
+   "title": "Pear Galettes with a Belgian Chocolate Sauce",
+   "tags": [
+      {
+         "tag": "Vegetarian"
+      },
+      {
+         "tag": "Nut Free"
+      }
+   ],
+   "planning": {
+      "prep_time": "PT15M",
+      "cook_time": "PT30M",
+      "total_time": "PT45M",
+      "serves": "6"
+   },
+   "ingredients": [
+      {
+         "item": "500g pack Jus-Rol Puff Pastry"
+      },
+      {
+         "item": "100g ground almonds"
+      },
+      {
+         "item": "3 tbsp Copella Apple and Pear Juice"
+      },
+      {
+         "item": "3 pears, washed, halved and quartered, cored and thinly sliced"
+      },
+      {
+         "item": "2 tbsp clear honey"
+      },
+      {
+         "item": "3 tbsp apricot jam"
+      },
+      {
+         "item": "300g pouch Waitrose Belgian Chocolate Sauce, to serve"
+      }
+   ],
+   "instructions": [],
+   "nutrition": {
+      "Energy": "2723.784kJ 651.0kcal",
+      "Fat": "34.4g",
+      "Saturated Fat": "16.0g",
+      "Sugars": "51.7g",
+      "Salt": "1.0g"
+   },
+   "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/p/0809r07.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"
+}

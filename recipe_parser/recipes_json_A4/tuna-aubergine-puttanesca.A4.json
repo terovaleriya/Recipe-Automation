@@ -1,0 +1,73 @@
+{
+  "title": "Tuna & aubergine puttanesca",
+  "tags": null,
+  "planning": {
+    "prep_time": "PT5M",
+    "cook_time": "PT15M",
+    "total_time": "PT20M",
+    "serves": "4"
+  },
+  "ingredients": [
+    {
+      "item": "250g wholewheat fusilli"
+    },
+    {
+      "item": "1 tbsp olive oil"
+    },
+    {
+      "item": "1 aubergine, cut into 1.5cm cubes"
+    },
+    {
+      "item": "3 tbsp drained capers"
+    },
+    {
+      "item": "1 tsp chilli flakes"
+    },
+    {
+      "item": "2 cloves garlic, sliced"
+    },
+    {
+      "item": "2 x 400g cans chopped tomatoes"
+    },
+    {
+      "item": "350g can Fragata Stoneless Manzanilla Olives Filled With Anchovy, drained and halved"
+    },
+    {
+      "item": "3 tbsp tomato purée"
+    },
+    {
+      "item": "2 x 160g cans essential Tuna Chunks In Spring Water, drained"
+    },
+    {
+      "item": "25g pack basil, leaves shredded"
+    },
+    {
+      "item": "50g Parmigiano Reggiano"
+    }
+  ],
+  "instructions": [
+    {
+      "step": "1. Cook the fusilli according to the pack instructions. Drain, then return to the saucepan."
+    },
+    {
+      "step": "2. Meanwhile, heat half the olive oil in a medium saucepan over a high heat. Add the aubergine and fry for 3-4 minutes, until browned. Set aside on a plate. Add the remaining oil to the pan and add the capers and chilli flakes. Fry for 30 seconds, then reduce the heat and add the garlic, tomatoes and olives."
+    },
+    {
+      "step": "3. Cook for 2 minutes before adding the tomato purée, tinned tuna and reserved aubergine. Simmer for 2 minutes, then add to the pan with the pasta (off the heat) and mix gently. Stir through half the basil. Spoon into shallow bowls and top with grated cheese and the remaining basil."
+    },
+    {
+      "step": "Cook’s tip When you finish a piece of Parmigiano Reggiano, use a microplane to use every last bit of cheese. Then add the leftover rind to a soup or stew during cooking for even more flavour."
+    }
+  ],
+  "nutrition": {
+    "Energy": "1,913kJ 455kcals",
+    "Fat": "14g",
+    "Saturated Fat": "4.5g",
+    "Carbohydrate": "47g",
+    "Sugars": "13g",
+    "Protein": "27g",
+    "Salt": "1.6g",
+    "Fibre": "11g"
+  },
+  "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/t/Waitrose-Weekend_WK481_Healthy-Everyday_Tuna-&-Aubergine-Puttanesca.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"
+}

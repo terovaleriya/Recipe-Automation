@@ -1,1 +1,70 @@
-{"title": "Italian vegetable soup with poached eggs & bread", "tags": null, "planning": {"prep_time": "PT10M", "cook_time": "PT30M", "total_time": "PT40M", "serves": "4"}, "ingredients": [{"item": "30g Cooks' Ingredients Dried Porcini Mushrooms"}, {"item": "2 tbsp garlic-infused olive oil, plus 1 tbsp for drizzling"}, {"item": "½ x 400g pack Cooks' Ingredients Soffritto Mix"}, {"item": "400g can chopped Italian tomatoes with herbs"}, {"item": "500ml pack Cooks' Ingredients Vegetable Stock"}, {"item": "75g tomato purÃ©e"}, {"item": "50g spinach"}, {"item": "4 Waitrose British Blacktail Medium Free Range Eggs"}, {"item": "4 x 50g slices bread"}, {"item": "30g Parmigiano Reggiano, grated"}, {"item": ""}], "instructions": [{"step": "1. Cover the porcini with 150ml boiling water in a bowl. Soak for 10 minutes. Drain, reserving the liquid, and chop roughly."}, {"step": "2. Meanwhile, heat the garlic oil in a large pan over a medium heat. Add the soffritto, season and cook for 10 minutes. Add the porcini and soaking liquid, tomatoes, stock and purÃ©e. Simmer for 20 minutes, then add the spinach. Crack each egg into the soup, cover with a lid and turn off the heat. Leave to stand for 5-10 minutes or until the whites are set and the yolks still runny."}, {"step": "3. Meanwhile, lightly toast the bread and drizzle with garlic oil. Ladle the soup into 4 bowls. Add the toast, place a poached egg on top and season. Serve with grated cheese."}, {"step": "Cookâs tip For an easy, ready-made version of this soup, try Waitrose Roasted Tomato, Bean & Quinoa soup. Add extra spinach too, if desired."}], "nutrition": {"Energy": "1,719kJ 411kcals", "Fat": "9.7g", "Saturated Fat": "4.8g", "Carbohydrate": "34.7g", "Sugars": "10.5g", "Protein": "19.2g", "Salt": "1g", "Fibre": "5.4g"}, "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/i/WRWK220318-Italian-veg-soup-with-poached-eggs-and-bread.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"}
+{
+   "title": "Italian vegetable soup with poached eggs & bread",
+   "tags": null,
+   "planning": {
+      "prep_time": "PT10M",
+      "cook_time": "PT30M",
+      "total_time": "PT40M",
+      "serves": "4"
+   },
+   "ingredients": [
+      {
+         "item": "30g Cooks’ Ingredients Dried Porcini Mushrooms"
+      },
+      {
+         "item": "2 tbsp garlic-infused olive oil, plus 1 tbsp for drizzling"
+      },
+      {
+         "item": "½ x 400g pack Cooks’ Ingredients Soffritto Mix"
+      },
+      {
+         "item": "400g can chopped Italian tomatoes with herbs"
+      },
+      {
+         "item": "500ml pack Cooks’ Ingredients Vegetable Stock"
+      },
+      {
+         "item": "75g tomato purée"
+      },
+      {
+         "item": "50g spinach"
+      },
+      {
+         "item": "4 Waitrose British Blacktail Medium Free Range Eggs"
+      },
+      {
+         "item": "4 x 50g slices bread"
+      },
+      {
+         "item": "30g Parmigiano Reggiano, grated"
+      },
+      {
+         "item": ""
+      }
+   ],
+   "instructions": [
+      {
+         "step": "1. Cover the porcini with 150ml boiling water in a bowl. Soak for 10 minutes. Drain, reserving the liquid, and chop roughly."
+      },
+      {
+         "step": "2. Meanwhile, heat the garlic oil in a large pan over a medium heat. Add the soffritto, season and cook for 10 minutes. Add the porcini and soaking liquid, tomatoes, stock and purée. Simmer for 20 minutes, then add the spinach. Crack each egg into the soup, cover with a lid and turn off the heat. Leave to stand for 5-10 minutes or until the whites are set and the yolks still runny."
+      },
+      {
+         "step": "3. Meanwhile, lightly toast the bread and drizzle with garlic oil. Ladle the soup into 4 bowls. Add the toast, place a poached egg on top and season. Serve with grated cheese."
+      },
+      {
+         "step": "Cook’s tip For an easy, ready-made version of this soup, try Waitrose Roasted Tomato, Bean & Quinoa soup. Add extra spinach too, if desired."
+      }
+   ],
+   "nutrition": {
+      "Energy": "1,719kJ 411kcals",
+      "Fat": "9.7g",
+      "Saturated Fat": "4.8g",
+      "Carbohydrate": "34.7g",
+      "Sugars": "10.5g",
+      "Protein": "19.2g",
+      "Salt": "1g",
+      "Fibre": "5.4g"
+   },
+   "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/i/WRWK220318-Italian-veg-soup-with-poached-eggs-and-bread.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"
+}

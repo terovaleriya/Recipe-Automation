@@ -1,1 +1,43 @@
-{"title": "Strawberry Tart", "tags": [{"tag": "Vegetarian"}], "planning": {"prep_time": "PT15 minutes, plus at least 1 hour chilling or overnightM", "cook_time": null, "total_time": "PT15 minutes, plus at least 1 hour chilling or overnightM", "serves": "6 - 8"}, "ingredients": [{"item": "½ x 250g tub ricotta"}, {"item": "200g light soft cheese"}, {"item": "50g Tate & Lyle Icing Sugar, sifted"}, {"item": "454g punnet strawberries, hulled"}, {"item": "1 Waitrose Sweet Pastry Case"}, {"item": "50g Doria Amaretti biscuits"}], "instructions": [], "nutrition": {"Energy": "1251.016kJ 299.0kcal", "Fat": "14.1g", "Saturated Fat": "8.9g", "Sugars": "21.7g", "Salt": "0.3g"}, "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/s/RC_MAY_2048x2048.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"}
+{
+  "title": "Strawberry Tart",
+  "tags": [
+    {
+      "tag": "Vegetarian"
+    }
+  ],
+  "planning": {
+    "prep_time": "PT15 minutes, plus at least 1 hour chilling or overnightM",
+    "cook_time": null,
+    "total_time": "PT15 minutes, plus at least 1 hour chilling or overnightM",
+    "serves": "6 - 8"
+  },
+  "ingredients": [
+    {
+      "item": "Â½ x 250g tub ricotta"
+    },
+    {
+      "item": "200g light soft cheese"
+    },
+    {
+      "item": "50g Tate & Lyle Icing Sugar, sifted"
+    },
+    {
+      "item": "454g punnet strawberries, hulled"
+    },
+    {
+      "item": "1 Waitrose Sweet Pastry Case"
+    },
+    {
+      "item": "50g Doria Amaretti biscuits"
+    }
+  ],
+  "instructions": [],
+  "nutrition": {
+    "Energy": "1251.016kJ 299.0kcal",
+    "Fat": "14.1g",
+    "Saturated Fat": "8.9g",
+    "Sugars": "21.7g",
+    "Salt": "0.3g"
+  },
+  "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/s/RC_MAY_2048x2048.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"
+}

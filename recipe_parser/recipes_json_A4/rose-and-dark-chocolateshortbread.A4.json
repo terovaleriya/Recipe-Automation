@@ -1,1 +1,52 @@
-{"title": "Rose and dark chocolate shortbread", "tags": null, "planning": {"prep_time": "PT25 minutes plus chilling and coolingM", "cook_time": "PT30 minutesM", "total_time": "PT55 minutes, plus chilling and coolingM", "serves": "20"}, "ingredients": [{"item": "200g unsalted butter, at room temperature"}, {"item": "100g caster sugar"}, {"item": "1 lemon, zest"}, {"item": "½-1 tsp rose water (rose water can vary in intensity, so add just a little at a time)"}, {"item": "1 tsp vanilla extract"}, {"item": "300g plain flour"}, {"item": "2 tbsp Waitrose Cooks' Ingredients dried rose petals, plus extra to decorate"}, {"item": "200g dark chocolate"}], "instructions": [{"step": ""}], "nutrition": {"Energy": "847kj 210kcal", "Fat": "12.7g", "Saturated Fat": "7.8g", "Carbohydrate": "20.8g", "Sugars": "8g", "Protein": "2.5g", "Salt": "0.2g", "Fibre": "1.2g"}, "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/r/Rose Dark Chocolate Shortbread.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"}
+{
+   "title": "Rose and dark chocolate shortbread",
+   "tags": null,
+   "planning": {
+      "prep_time": "PT25 minutes plus chilling and coolingM",
+      "cook_time": "PT30 minutesM",
+      "total_time": "PT55 minutes, plus chilling and coolingM",
+      "serves": "20"
+   },
+   "ingredients": [
+      {
+         "item": "200g unsalted butter, at room temperature"
+      },
+      {
+         "item": "100g caster sugar"
+      },
+      {
+         "item": "1 lemon, zest"
+      },
+      {
+         "item": "½-1 tsp rose water (rose water can vary in intensity, so add just a little at a time)"
+      },
+      {
+         "item": "1 tsp vanilla extract"
+      },
+      {
+         "item": "300g plain flour"
+      },
+      {
+         "item": "2 tbsp Waitrose Cooks’ Ingredients dried rose petals, plus extra to decorate"
+      },
+      {
+         "item": "200g dark chocolate"
+      }
+   ],
+   "instructions": [
+      {
+         "step": ""
+      }
+   ],
+   "nutrition": {
+      "Energy": "847kj 210kcal",
+      "Fat": "12.7g",
+      "Saturated Fat": "7.8g",
+      "Carbohydrate": "20.8g",
+      "Sugars": "8g",
+      "Protein": "2.5g",
+      "Salt": "0.2g",
+      "Fibre": "1.2g"
+   },
+   "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/r/Rose Dark Chocolate Shortbread.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"
+}

@@ -1,1 +1,64 @@
-{"title": "Wholegrain vegetable noodle stir fry with grilled sea bass ", "tags": null, "planning": {"prep_time": "PT5M", "cook_time": "PT15M", "total_time": "PT20M", "serves": "4"}, "ingredients": [{"item": "\u0007225g pack Mama Instant Whole Grain Rice Vermicelli"}, {"item": "\u0007360g pack 4 sea bass fillets"}, {"item": "\u00071½ tsp yuzu juice or paste"}, {"item": "\u00071 tsp ginger paste"}, {"item": "\u00071 tsp vegetable oil"}, {"item": "\u00071 large red onion, cut into wedges"}, {"item": "\u00071 clove garlic, thinly sliced"}, {"item": "\u00071 red pepper, deseeded and cut into strips"}, {"item": "\u0007½ x 150g pack Pentland Brig Kale, sliced"}, {"item": "\u00071 tsp reduced salt light soy sauce"}, {"item": "\u0007Shredded salad onions, to serve"}, {"item": "\u0007Lime wedges, to serve"}], "instructions": [{"step": "1. Preheat the grill to medium. Cook the rice vermicelli according to pack instructions. Cool under cold running water, drain, then set aside. Mix the fish with the yuzu and ginger paste. Season. Place on a foil-lined baking tray and grill for 7-8 minutes, turning once, until just cooked through. 2. Meanwhile, warm the vegetable oil in a wok over a high heat. Add the red onion and garlic and stir fry for 1 minute, then add the pepper and stir fry for another minute before adding the kale. 3. After stir frying for 1-2 minutes, toss in the vermicelli and soy sauce to combine and heat through. Serve piping hot with the fish, garnished with the salad onions, and lime wedges on the side for squeezing over."}], "nutrition": {"Energy": "1,732kJ 411kcals", "Fat": "9.3g", "Saturated Fat": "2g", "Carbohydrate": "52g", "Sugars": "4.9g", "Protein": "28g", "Salt": "0.3g", "Fibre": "3.6g"}, "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/w/Veg-Noodle-Stirfry-With-Seabass_219053.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"}
+{
+   "title": "Wholegrain vegetable noodle stir fry with grilled sea bass",
+   "tags": null,
+   "planning": {
+      "prep_time": "PT5M",
+      "cook_time": "PT15M",
+      "total_time": "PT20M",
+      "serves": "4"
+   },
+   "ingredients": [
+      {
+         "item": "\u0007225g pack Mama Instant Whole Grain Rice Vermicelli"
+      },
+      {
+         "item": "\u0007360g pack 4 sea bass fillets"
+      },
+      {
+         "item": "\u00071½ tsp yuzu juice or paste"
+      },
+      {
+         "item": "\u00071 tsp ginger paste"
+      },
+      {
+         "item": "\u00071 tsp vegetable oil"
+      },
+      {
+         "item": "\u00071 large red onion, cut into wedges"
+      },
+      {
+         "item": "\u00071 clove garlic, thinly sliced"
+      },
+      {
+         "item": "\u00071 red pepper, deseeded and cut into strips"
+      },
+      {
+         "item": "\u0007½ x 150g pack Pentland Brig Kale, sliced"
+      },
+      {
+         "item": "\u00071 tsp reduced salt light soy sauce"
+      },
+      {
+         "item": "\u0007Shredded salad onions, to serve"
+      },
+      {
+         "item": "\u0007Lime wedges, to serve"
+      }
+   ],
+   "instructions": [
+      {
+         "step": "1. Preheat the grill to medium.  Cook the rice vermicelli according to pack instructions. Cool under cold running water, drain, then set aside. Mix the fish with the yuzu and ginger paste. Season. Place on a foil-lined baking tray and grill for 7-8 minutes, turning once, until just cooked through. \n\n2. Meanwhile, warm the vegetable oil in a wok over a high heat. Add the red onion and garlic and stir fry for 1 minute, then add the pepper and stir fry for another minute before adding the kale. \n\n3. After stir frying for 1-2 minutes, toss in the vermicelli and soy sauce to combine and heat through. Serve piping hot with the fish, garnished with the salad onions, and lime wedges on the side for squeezing over."
+      }
+   ],
+   "nutrition": {
+      "Energy": "1,732kJ 411kcals",
+      "Fat": "9.3g",
+      "Saturated Fat": "2g",
+      "Carbohydrate": "52g",
+      "Sugars": "4.9g",
+      "Protein": "28g",
+      "Salt": "0.3g",
+      "Fibre": "3.6g"
+   },
+   "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/w/Veg-Noodle-Stirfry-With-Seabass_219053.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"
+}

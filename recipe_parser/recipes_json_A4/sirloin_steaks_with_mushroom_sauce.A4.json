@@ -1,1 +1,52 @@
-{"title": "Sirloin Steaks with Mushroom Sauce", "tags": [{"tag": "Organic"}], "planning": {"prep_time": "PT10M", "cook_time": "PT18M", "total_time": "PT28M", "serves": "2"}, "ingredients": [{"item": "15g organic unsalted butter"}, {"item": "½ tbsp organic olive oil"}, {"item": "2 x Waitrose Organic British Sirloin Steaks"}, {"item": "2 cloves organic garlic, crushed"}, {"item": "½ x 250g pack organic chestnut mushrooms, sliced"}, {"item": "½ x 250g pack organic Portabellini mushrooms, peeled and sliced"}, {"item": "½ x 300g pot JoubÃ¨re Organic Beef Stock"}, {"item": "½ x 227ml pot Yeo Valley Organic Double Cream"}, {"item": "½ x 20g pack fresh organic curly parsley, chopped"}], "instructions": [], "nutrition": {"Energy": "3234.232kJ 773.0kcal", "Fat": "58.3g", "Saturated Fat": "31.3g", "Sugars": "1.7g", "Salt": "0.5g"}, "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/s/0609r08.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"}
+{
+   "title": "Sirloin Steaks with Mushroom Sauce",
+   "tags": [
+      {
+         "tag": "Organic"
+      }
+   ],
+   "planning": {
+      "prep_time": "PT10M",
+      "cook_time": "PT18M",
+      "total_time": "PT28M",
+      "serves": "2"
+   },
+   "ingredients": [
+      {
+         "item": "15g organic unsalted butter"
+      },
+      {
+         "item": "½ tbsp organic olive oil"
+      },
+      {
+         "item": "2 x Waitrose Organic British Sirloin Steaks"
+      },
+      {
+         "item": "2 cloves organic garlic, crushed"
+      },
+      {
+         "item": "½ x 250g pack organic chestnut mushrooms, sliced"
+      },
+      {
+         "item": "½ x 250g pack organic Portabellini mushrooms, peeled and sliced"
+      },
+      {
+         "item": "½ x 300g pot Joubère Organic Beef Stock"
+      },
+      {
+         "item": "½ x 227ml pot Yeo Valley Organic Double Cream"
+      },
+      {
+         "item": "½ x 20g pack fresh organic curly parsley, chopped"
+      }
+   ],
+   "instructions": [],
+   "nutrition": {
+      "Energy": "3234.232kJ 773.0kcal",
+      "Fat": "58.3g",
+      "Saturated Fat": "31.3g",
+      "Sugars": "1.7g",
+      "Salt": "0.5g"
+   },
+   "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/s/0609r08.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"
+}

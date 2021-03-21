@@ -1,1 +1,43 @@
-{"title": "Strawberry Tartlets", "tags": [{"tag": "Vegetarian"}], "planning": {"prep_time": "PT25 minutes, plus coolingM", "cook_time": "PT15M", "total_time": "PT40 minutes, plus coolingM", "serves": "8"}, "ingredients": [{"item": "375g pack dessert shortcrust pastry"}, {"item": "1 tbsp icing sugar"}, {"item": "½ tsp vanilla extract"}, {"item": "150ml crÃ¨me fraÃ®che"}, {"item": "250g strawberries, hulled"}, {"item": "4 tbsp Waitrose Redcurrant Jelly"}], "instructions": [], "nutrition": {"Energy": "1405.824kJ 336.0kcal", "Fat": "20.6g", "Saturated Fat": "9.0g", "Sugars": "14.8g", "Salt": "0.5g"}, "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/s/0605ss08-r04.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"}
+{
+  "title": "Strawberry Tartlets",
+  "tags": [
+    {
+      "tag": "Vegetarian"
+    }
+  ],
+  "planning": {
+    "prep_time": "PT25 minutes, plus coolingM",
+    "cook_time": "PT15M",
+    "total_time": "PT40 minutes, plus coolingM",
+    "serves": "8"
+  },
+  "ingredients": [
+    {
+      "item": "375g pack dessert shortcrust pastry"
+    },
+    {
+      "item": "1 tbsp icing sugar"
+    },
+    {
+      "item": "½ tsp vanilla extract"
+    },
+    {
+      "item": "150ml crème fraîche"
+    },
+    {
+      "item": "250g strawberries, hulled"
+    },
+    {
+      "item": "4 tbsp Waitrose Redcurrant Jelly"
+    }
+  ],
+  "instructions": [],
+  "nutrition": {
+    "Energy": "1405.824kJ 336.0kcal",
+    "Fat": "20.6g",
+    "Saturated Fat": "9.0g",
+    "Sugars": "14.8g",
+    "Salt": "0.5g"
+  },
+  "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/s/0605ss08-r04.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"
+}

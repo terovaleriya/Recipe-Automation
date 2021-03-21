@@ -1,1 +1,61 @@
-{"title": "Aubergine & paneer biryani", "tags": null, "planning": {"prep_time": "PT10 minutesM", "cook_time": "PT45 minutesM", "total_time": null, "serves": "2"}, "ingredients": [{"item": "2 1â2 tbsp sunflower oil"}, {"item": "1 onion, halved and finely sliced"}, {"item": "1 aubergine, cut into 4cm cubes"}, {"item": "150g paneer, cut into 3cm cubes"}, {"item": "1 The Spice Tailor Delhi Biryani kit"}, {"item": "6 tbsp Greek strained natural yogurt"}, {"item": "200g cucumber, coarsely grated"}, {"item": "Pinch ground cumin"}, {"item": "2 tbsp coriander leaves"}], "instructions": [{"step": "1.Preheat the oven to 220 ÌC, gas mark 7. Heat 1 tbsp oil in a lidded pan over a medium heat. Fry the onion with a pinch of salt, stirring regularly, for 20-25 minutes until crisp and golden. Meanwhile, toss the aubergine and 1 tbsp oil on a non-stick baking tray. Roast for 25 minutes, stirring halfway, until golden."}, {"step": "2.Scoop the onion onto kitchen paper. Return the pan to the heat with the remaining 1â2 tbsp oil and fry the paneer on all sides until golden; set aside. Return the pan to the heat with the spices from the biryani kit and fry for 1 minute. Add the paneer, aubergine, sauce from the kit and 1 tbsp water and stir over the heat for 1 minute. Reduce the heat to low and stir in 2 tbsp yogurt. Massage the rice packet from the kit to break up any clumps, then layer over the aubergine. Sprinkle over the crispy onions, cover with a lid and steam for 15 minutes."}, {"step": "3.Meanwhile, toss the cucumber with a pinch of salt; press in a sieve to extract any excess liquid. Mix with the remaining 4 tbsp yogurt, then dust with the cumin. When the biryani is done, uncover, scatter with coriander and serve with the raita."}], "nutrition": {"Energy": "Per serving 3197kJ 767kcals", "Fat": "48g", "Saturated Fat": "19g", "Carbohydrate": "55g", "Sugars": "15g", "Protein": "26g", "Salt": "1.8g", "Fibre": "8.6g"}, "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/4678-March-Recipe-Cards-Assets-400x400-rice.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"}
+{
+  "title": "Aubergine & paneer biryani",
+  "tags": null,
+  "planning": {
+    "prep_time": "PT10 minutesM",
+    "cook_time": "PT45 minutesM",
+    "total_time": null,
+    "serves": "2"
+  },
+  "ingredients": [
+    {
+      "item": "2 1⁄2 tbsp sunflower oil"
+    },
+    {
+      "item": "1 onion, halved and finely sliced"
+    },
+    {
+      "item": "1 aubergine, cut into 4cm cubes"
+    },
+    {
+      "item": "150g paneer, cut into 3cm cubes"
+    },
+    {
+      "item": "1 The Spice Tailor Delhi Biryani kit"
+    },
+    {
+      "item": "6 tbsp Greek strained natural yogurt"
+    },
+    {
+      "item": "200g cucumber, coarsely grated"
+    },
+    {
+      "item": "Pinch ground cumin"
+    },
+    {
+      "item": "2 tbsp coriander leaves"
+    }
+  ],
+  "instructions": [
+    {
+      "step": "1.Preheat the oven to 220 ̊C, gas mark 7. Heat 1 tbsp oil in a lidded pan over a medium heat. Fry the onion with a pinch of salt, stirring regularly, for 20-25 minutes until crisp and golden. Meanwhile, toss the aubergine and 1 tbsp oil on a non-stick baking tray. Roast for 25 minutes, stirring halfway, until golden."
+    },
+    {
+      "step": "2.Scoop the onion onto kitchen paper. Return the pan to the heat with the remaining 1⁄2 tbsp oil and fry the paneer on all sides until golden; set aside. Return the pan to the heat with the spices from the biryani kit and fry for 1 minute. Add the paneer, aubergine, sauce from the kit and 1 tbsp water and stir over the heat for 1 minute. Reduce the heat to low and stir in 2 tbsp yogurt. Massage the rice packet from the kit to break up any clumps, then layer over the aubergine. Sprinkle over the crispy onions, cover with a lid and steam for 15 minutes."
+    },
+    {
+      "step": "3.Meanwhile, toss the cucumber with a pinch of salt; press in a sieve to extract any excess liquid. Mix with the remaining 4 tbsp yogurt, then dust with the cumin. When the biryani is done, uncover, scatter with coriander and serve with the raita."
+    }
+  ],
+  "nutrition": {
+    "Energy": "Per serving 3197kJ 767kcals",
+    "Fat": "48g",
+    "Saturated Fat": "19g",
+    "Carbohydrate": "55g",
+    "Sugars": "15g",
+    "Protein": "26g",
+    "Salt": "1.8g",
+    "Fibre": "8.6g"
+  },
+  "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/4678-March-Recipe-Cards-Assets-400x400-rice.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"
+}

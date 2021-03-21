@@ -1,1 +1,39 @@
-{"title": "Apple Tart", "tags": null, "planning": {"prep_time": "PT15M", "cook_time": "PT40M", "total_time": "PT55M", "serves": "8"}, "ingredients": [{"item": "1 All-butter puff pastry sheet, 24cm x 30cm"}, {"item": "3½ tbsp Soft brown sugar"}, {"item": "1 tbsp Medium semolina"}, {"item": "4 Granny smith apples"}, {"item": "70g Butter, melted"}, {"item": "1 tbsp Icing sugar"}], "instructions": [], "nutrition": {"Energy": "958.136kJ 229.0kcal", "Fat": "14.0g", "Saturated Fat": "9.0g", "Sugars": "13.0g", "Salt": "0.4g"}, "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/a/20102WFI544.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"}
+{
+  "title": "Apple Tart",
+  "tags": null,
+  "planning": {
+    "prep_time": "PT15M",
+    "cook_time": "PT40M",
+    "total_time": "PT55M",
+    "serves": "8"
+  },
+  "ingredients": [
+    {
+      "item": "1 All-butter puff pastry sheet, 24cm x 30cm"
+    },
+    {
+      "item": "3½ tbsp Soft brown sugar"
+    },
+    {
+      "item": "1 tbsp Medium semolina"
+    },
+    {
+      "item": "4 Granny smith apples"
+    },
+    {
+      "item": "70g Butter, melted"
+    },
+    {
+      "item": "1 tbsp Icing sugar"
+    }
+  ],
+  "instructions": [],
+  "nutrition": {
+    "Energy": "958.136kJ 229.0kcal",
+    "Fat": "14.0g",
+    "Saturated Fat": "9.0g",
+    "Sugars": "13.0g",
+    "Salt": "0.4g"
+  },
+  "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/a/20102WFI544.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"
+}

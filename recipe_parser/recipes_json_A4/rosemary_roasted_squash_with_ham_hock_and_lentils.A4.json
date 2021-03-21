@@ -1,1 +1,56 @@
-{"title": "Rosemary-roasted squash with ham hock and lentils", "tags": [{"tag": "Gluten Free"}], "planning": {"prep_time": "PT15M", "cook_time": "PT35M", "total_time": "PT50M", "serves": "4"}, "ingredients": [{"item": "500g pack frozen essential Waitrose Butternut Squash"}, {"item": "2 sprigs fresh rosemary, chopped"}, {"item": "250g puy or Waitrose Wholesome Lentils"}, {"item": "1 tsp olive oil"}, {"item": "1 small onion, finely chopped"}, {"item": "1 tbsp Dijon mustard"}, {"item": "100ml essential Waitrose Single Cream"}, {"item": "180g pack Cooks' Ingredients pulled ham hock"}, {"item": "25g sunflower seeds"}, {"item": "20g pack flat leaf parsley, chopped"}], "instructions": [], "nutrition": {"Energy": "1828.408kJ 437kcal", "Fat": "13g", "Saturated Fat": "4.6g", "Carbohydrate": "50g", "Sugars": "9.6g", "Salt": "1.5g"}, "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/r/201102r03.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"}
+{
+   "title": "Rosemary-roasted squash with ham hock and lentils",
+   "tags": [
+      {
+         "tag": "Gluten Free"
+      }
+   ],
+   "planning": {
+      "prep_time": "PT15M",
+      "cook_time": "PT35M",
+      "total_time": "PT50M",
+      "serves": "4"
+   },
+   "ingredients": [
+      {
+         "item": "500g pack frozen essential Waitrose Butternut Squash"
+      },
+      {
+         "item": "2 sprigs fresh rosemary, chopped"
+      },
+      {
+         "item": "250g puy or Waitrose Wholesome Lentils"
+      },
+      {
+         "item": "1 tsp olive oil"
+      },
+      {
+         "item": "1 small onion, finely chopped"
+      },
+      {
+         "item": "1 tbsp Dijon mustard"
+      },
+      {
+         "item": "100ml essential Waitrose Single Cream"
+      },
+      {
+         "item": "180g pack Cooks’ Ingredients pulled ham hock"
+      },
+      {
+         "item": "25g sunflower seeds"
+      },
+      {
+         "item": "20g pack flat leaf parsley, chopped"
+      }
+   ],
+   "instructions": [],
+   "nutrition": {
+      "Energy": "1828.408kJ 437kcal",
+      "Fat": "13g",
+      "Saturated Fat": "4.6g",
+      "Carbohydrate": "50g",
+      "Sugars": "9.6g",
+      "Salt": "1.5g"
+   },
+   "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/r/201102r03.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"
+}

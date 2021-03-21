@@ -1,1 +1,58 @@
-{"title": "Lamb with roasted cumin cauliflower", "tags": null, "planning": {"prep_time": null, "cook_time": null, "total_time": "PT30M", "serves": "2"}, "ingredients": [{"item": "1 cauliflower, cut into florets"}, {"item": "1 tbsp olive oil"}, {"item": "1½ tsp ground cumin"}, {"item": "½ tsp caraway seeds, lightly crushed"}, {"item": "1 red onion, sliced"}, {"item": "25g pack parsley, chopped"}, {"item": "2 lamb leg steaks"}, {"item": "1 tbsp mango chutney"}], "instructions": [{"step": "1. Preheat the oven to 200°C, gas mark 6. Blanch the cauliflower in boiling water for 3 minutes and drain."}, {"step": "2. Meanwhile, put the oil in a roasting tin with the spices and onion, and roast for 5 minutes. Toss in the cauliflower and roast for 15 minutes. Mix in the parsley and season."}, {"step": "3. Brush the lamb with chutney and put under a preheated grill for 4â5 minutes each side. Serve with the cauliflower."}], "nutrition": {"Energy": "1,690kJ 404kcals", "Fat": "22.2g", "Saturated Fat": "8.1g", "Carbohydrate": "18.7g", "Sugars": "15.2g", "Protein": "32.4g", "Salt": "0.5g", "Fibre": "6g"}, "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/l/WRWK_02032017_Lamb_Roasted_Cumin_Cauliflower.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"}
+{
+   "title": "Lamb with roasted cumin cauliflower",
+   "tags": null,
+   "planning": {
+      "prep_time": null,
+      "cook_time": null,
+      "total_time": "PT30M",
+      "serves": "2"
+   },
+   "ingredients": [
+      {
+         "item": "1 cauliflower, cut into florets"
+      },
+      {
+         "item": "1 tbsp olive oil"
+      },
+      {
+         "item": "1½ tsp ground cumin"
+      },
+      {
+         "item": "½ tsp caraway seeds, lightly crushed"
+      },
+      {
+         "item": "1 red onion, sliced"
+      },
+      {
+         "item": "25g pack parsley, chopped"
+      },
+      {
+         "item": "2 lamb leg steaks"
+      },
+      {
+         "item": "1 tbsp mango chutney"
+      }
+   ],
+   "instructions": [
+      {
+         "step": "1. Preheat the oven to 200°C, gas mark 6. Blanch the cauliflower in boiling water for 3 minutes and drain."
+      },
+      {
+         "step": "2. Meanwhile, put the oil in a roasting tin with the spices and onion, and roast for 5 minutes. Toss in the cauliflower and roast for 15 minutes. Mix in the parsley and season."
+      },
+      {
+         "step": "3. Brush the lamb with chutney and put under a preheated grill for 4–5 minutes each side. Serve with the cauliflower."
+      }
+   ],
+   "nutrition": {
+      "Energy": "1,690kJ 404kcals",
+      "Fat": "22.2g",
+      "Saturated Fat": "8.1g",
+      "Carbohydrate": "18.7g",
+      "Sugars": "15.2g",
+      "Protein": "32.4g",
+      "Salt": "0.5g",
+      "Fibre": "6g"
+   },
+   "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/l/WRWK_02032017_Lamb_Roasted_Cumin_Cauliflower.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"
+}

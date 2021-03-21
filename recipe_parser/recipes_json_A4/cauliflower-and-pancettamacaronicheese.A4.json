@@ -1,1 +1,79 @@
-{"title": "Cauliflower and pancetta macaroni cheese", "tags": null, "planning": {"prep_time": "PT15M", "cook_time": "PT70M", "total_time": "PT85M", "serves": "4"}, "ingredients": [{"item": "â¢ 1 cauliflower, cut into florets, plus any pale inner leaves"}, {"item": "â¢ 150g macaroni"}, {"item": "â¢ 150g diced pancetta"}, {"item": "â¢ 3 tbsp unsalted butter"}, {"item": "â¢ 4 tbsp plain flour"}, {"item": "â¢ 600ml whole milk"}, {"item": "â¢ 1 bay leaf"}, {"item": "â¢ 50g parmigiano reggiano, grated"}, {"item": "â¢ 100g mature cheddar, grated"}, {"item": "â¢ ¼ fresh nutmeg, grated"}, {"item": "â¢ 1 tbsp dijon mustard"}, {"item": "â¢ good pinch cayenne pepper"}, {"item": "â¢ 75ml double cream"}], "instructions": [{"step": "1. Cook the cauliflower in boiling, salted water for 6-8 minutes, until just tender. Scoop it out and drain with a slotted spoon; set aside."}, {"step": "2. Put the macaroni in the same water; cook according to pack instructions, until just al dente. Drain and set aside."}, {"step": "3. In the same pan, fry the pancetta for about 7-9 minutes, until crispy. Remove and add to the cauliflower and pasta."}, {"step": "4. Melt the butter in the pan; add the flour. Stir for 1-2 minutes, until it starts to bubble. Gradually whisk in the milk until it forms a smooth sauce. Add the bay leaf; simmer over the lowest heat for 10 minutes, stirring often, until thick and smooth."}, {"step": "5. Preheat the oven to 200ËC, gas mark 6. Mix together the cheeses and stir all but a couple of handfuls into the white sauce. Add the nutmeg, then add the mustard, cayenne pepper and cream; season generously. Stir in the cauliflower, pasta and pancetta. Taste and add more seasoning and nutmeg, if needed. Pile into a gratin dish (about 1.5-2 litres in volume) and scatter with the reserved cheese. Bake for 20â25 minutes, or until bubbling and tinged with gold."}], "nutrition": {"Energy": "2,354Kj 565Kcal", "Fat": "36.6g", "Saturated Fat": "20.2g", "Carbohydrate": "35.8g", "Sugars": "7.9g", "Protein": "23g", "Salt": "1.5g", "Fibre": "2.9g"}, "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/c/Cauliflower-and-Pancetta-Macaroni-Cheese-400x400.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"}
+{
+   "title": "Cauliflower and pancetta macaroni cheese",
+   "tags": null,
+   "planning": {
+      "prep_time": "PT15M",
+      "cook_time": "PT70M",
+      "total_time": "PT85M",
+      "serves": "4"
+   },
+   "ingredients": [
+      {
+         "item": "• 1 cauliflower, cut into florets, plus any pale inner leaves"
+      },
+      {
+         "item": "• 150g macaroni"
+      },
+      {
+         "item": "• 150g diced pancetta"
+      },
+      {
+         "item": "• 3 tbsp unsalted butter"
+      },
+      {
+         "item": "• 4 tbsp plain flour"
+      },
+      {
+         "item": "• 600ml whole milk"
+      },
+      {
+         "item": "• 1 bay leaf"
+      },
+      {
+         "item": "• 50g parmigiano reggiano, grated"
+      },
+      {
+         "item": "• 100g mature cheddar, grated"
+      },
+      {
+         "item": "• ¼ fresh nutmeg, grated"
+      },
+      {
+         "item": "• 1 tbsp dijon mustard"
+      },
+      {
+         "item": "• good pinch cayenne pepper"
+      },
+      {
+         "item": "• 75ml double cream"
+      }
+   ],
+   "instructions": [
+      {
+         "step": "1. Cook the cauliflower in boiling, salted water for 6-8 minutes, until just tender. Scoop it out and drain with a slotted spoon; set aside."
+      },
+      {
+         "step": "2. Put the macaroni in the same water; cook according to pack instructions, until just al dente. Drain and set aside."
+      },
+      {
+         "step": "3. In the same pan, fry the pancetta for about 7-9 minutes, until crispy. Remove and add to the cauliflower and pasta."
+      },
+      {
+         "step": "4. Melt the butter in the pan; add the flour. Stir for 1-2 minutes, until it starts to bubble. Gradually whisk in the milk until it forms a smooth sauce. Add the bay leaf; simmer over the lowest heat for 10 minutes, stirring often, until thick and smooth."
+      },
+      {
+         "step": "5. Preheat the oven to 200˚C, gas mark 6. Mix together the cheeses and stir all but a couple of handfuls into the white sauce. Add the nutmeg, then add the mustard, cayenne pepper and cream; season generously. Stir in the cauliflower, pasta and pancetta. Taste and add more seasoning and nutmeg, if needed. Pile into a gratin dish (about 1.5-2 litres in volume) and scatter with the reserved cheese. Bake for 20–25 minutes, or until bubbling and tinged with gold."
+      }
+   ],
+   "nutrition": {
+      "Energy": "2,354Kj 565Kcal",
+      "Fat": "36.6g",
+      "Saturated Fat": "20.2g",
+      "Carbohydrate": "35.8g",
+      "Sugars": "7.9g",
+      "Protein": "23g",
+      "Salt": "1.5g",
+      "Fibre": "2.9g"
+   },
+   "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/c/Cauliflower-and-Pancetta-Macaroni-Cheese-400x400.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"
+}

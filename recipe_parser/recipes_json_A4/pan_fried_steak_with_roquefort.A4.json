@@ -1,1 +1,48 @@
-{"title": "Pan Fried Steak with Roquefort", "tags": null, "planning": {"prep_time": "PT5M", "cook_time": "PT10M", "total_time": "PT15M", "serves": "2"}, "ingredients": [{"item": "50g SociÃ©tÃ© Roquefort Cheese"}, {"item": "25g butter, softened"}, {"item": "1 tsp sunflower oil"}, {"item": "2 Waitrose British or Hereford Sirloin Steaks (prepacked)"}, {"item": "Salt"}, {"item": "Freshly ground black pepper"}, {"item": "100ml Waitrose 5 Year Old Whisky or Waitrose Bourbon Whiskey"}, {"item": "To serve:"}, {"item": "85g bag Waitrose Watercress"}, {"item": "1 small red onion, thinly sliced"}], "instructions": [], "nutrition": {"Energy": "1677.784kJ 401.0kcal", "Fat": "24.3g"}, "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/p/0102r01.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"}
+{
+  "title": "Pan Fried Steak with Roquefort",
+  "tags": null,
+  "planning": {
+    "prep_time": "PT5M",
+    "cook_time": "PT10M",
+    "total_time": "PT15M",
+    "serves": "2"
+  },
+  "ingredients": [
+    {
+      "item": "50g  Société Roquefort Cheese"
+    },
+    {
+      "item": "25g butter, softened"
+    },
+    {
+      "item": "1 tsp sunflower oil"
+    },
+    {
+      "item": "2 Waitrose British or Hereford Sirloin Steaks (prepacked)"
+    },
+    {
+      "item": "Salt"
+    },
+    {
+      "item": "Freshly ground black pepper"
+    },
+    {
+      "item": "100ml Waitrose 5 Year Old Whisky or Waitrose Bourbon Whiskey"
+    },
+    {
+      "item": "To serve:"
+    },
+    {
+      "item": "85g bag Waitrose Watercress"
+    },
+    {
+      "item": "1 small red onion, thinly sliced"
+    }
+  ],
+  "instructions": [],
+  "nutrition": {
+    "Energy": "1677.784kJ 401.0kcal",
+    "Fat": "24.3g"
+  },
+  "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/p/0102r01.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"
+}

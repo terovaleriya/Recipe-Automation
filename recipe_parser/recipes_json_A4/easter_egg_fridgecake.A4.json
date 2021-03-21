@@ -1,1 +1,65 @@
-{"title": "Easter egg fridge cake ", "tags": null, "planning": {"prep_time": null, "cook_time": null, "total_time": null, "serves": "16"}, "ingredients": [{"item": "Mini egg base:"}, {"item": "â¢ 200g sugar-coated chocolate mini eggs"}, {"item": "â¢ 25g toasted chopped hazelnuts (or cookies or crispy rice cereal)"}, {"item": "â¢ 35g white chocolate Easter egg, melted"}, {"item": ""}, {"item": "Easter egg filling:"}, {"item": "â¢ 200g dark chocolate Easter egg, roughly chopped"}, {"item": "â¢ 200ml double cream"}, {"item": ""}, {"item": "To decorate:"}, {"item": "â¢ white, milk or dark chocolate Easter eggs, broken into shards"}], "instructions": [{"step": "1. For the base, put the mini eggs in a food processor with the nuts and a pinch of sea salt; blitz to a medium crumb. Add the melted white chocolate and mix by hand until everything is well coated. Spoon into the base of an 18cm square cake tin lined with greaseproof paper or clingfilm. Smooth with the back of a spoon; set aside. (If it gets sticky, dip the spoon in hot water, dry, then smooth out.)"}, {"step": "2. For the filling, melt the dark chocolate in a bowl placed over a pan of barely simmering water. In another bowl, whip the cream until just holding its shape. Fold the melted chocolate into the cream to make a ganache. Spoon onto the base, smooth, then top with Easter egg shards."}, {"step": "3. Chill for 2 hours, then carefully turn out of the tin and slice into squares."}], "nutrition": {"Energy": "958.136kJ 229kcals", "Fat": "16.5g", "Saturated Fat": "9.8g", "Carbohydrate": "17.8g", "Sugars": "16.1g", "Salt": "0.1g"}, "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/e/EGGCAKE.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"}
+{
+  "title": "Easter egg fridge cake",
+  "tags": null,
+  "planning": {
+    "prep_time": null,
+    "cook_time": null,
+    "total_time": null,
+    "serves": "16"
+  },
+  "ingredients": [
+    {
+      "item": "Mini egg base:"
+    },
+    {
+      "item": "• 200g sugar-coated chocolate mini eggs"
+    },
+    {
+      "item": "• 25g toasted chopped hazelnuts (or cookies or crispy rice cereal)"
+    },
+    {
+      "item": "• 35g white chocolate Easter egg, melted"
+    },
+    {
+      "item": ""
+    },
+    {
+      "item": "Easter egg filling:"
+    },
+    {
+      "item": "• 200g dark chocolate Easter egg, roughly chopped"
+    },
+    {
+      "item": "• 200ml double cream"
+    },
+    {
+      "item": ""
+    },
+    {
+      "item": "To decorate:"
+    },
+    {
+      "item": "• white, milk or dark chocolate Easter eggs, broken into shards"
+    }
+  ],
+  "instructions": [
+    {
+      "step": "1. For the base, put the mini eggs in a food processor with the nuts and a pinch of sea salt; blitz to a medium crumb. Add the melted white chocolate and mix by hand until everything is well coated. Spoon into the base of an 18cm square cake tin lined with greaseproof paper or clingfilm. Smooth with the back of a spoon; set aside. (If it gets sticky, dip the spoon in hot water, dry, then smooth out.)"
+    },
+    {
+      "step": "2. For the filling, melt the dark chocolate in a bowl placed over a pan of barely simmering water. In another bowl, whip the cream until just holding its shape. \n Fold the melted chocolate into the cream to make a ganache. Spoon onto the base, smooth, then top with Easter egg shards."
+    },
+    {
+      "step": "3. Chill for 2 hours, then carefully turn out of the tin and slice into squares."
+    }
+  ],
+  "nutrition": {
+    "Energy": "958.136kJ 229kcals",
+    "Fat": "16.5g",
+    "Saturated Fat": "9.8g",
+    "Carbohydrate": "17.8g",
+    "Sugars": "16.1g",
+    "Salt": "0.1g"
+  },
+  "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/e/EGGCAKE.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"
+}

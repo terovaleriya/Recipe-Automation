@@ -1,1 +1,45 @@
-{"title": "Sea salt fudge brownies", "tags": null, "planning": {"prep_time": "PT20M", "cook_time": "PT30M", "total_time": null, "serves": "24"}, "ingredients": [{"item": "180g Hope & Greenwood handmade salt caramel fudge or other fudge"}, {"item": "250g Waitrose Continental Plain Chocolate, chopped"}, {"item": "175g unsalted butter"}, {"item": "3 eggs"}, {"item": "225g light muscovado sugar"}, {"item": "75g self raising flour"}, {"item": "½ tsp baking powder"}, {"item": "100g roasted, salted large peanuts, chopped"}], "instructions": [], "nutrition": {"Energy": "937.216kJ 224.0kcal", "Fat": "13.1g", "Saturated Fat": "7.0g", "Sugars": "22.6g", "Salt": "0.4g"}, "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/s/228_p14_sea-salt-brownies-pic_2048x2048.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"}
+{
+  "title": "Sea salt fudge brownies",
+  "tags": null,
+  "planning": {
+    "prep_time": "PT20M",
+    "cook_time": "PT30M",
+    "total_time": null,
+    "serves": "24"
+  },
+  "ingredients": [
+    {
+      "item": "180g Hope & Greenwood handmade salt caramel fudge or other fudge"
+    },
+    {
+      "item": "250g Waitrose Continental Plain Chocolate, chopped"
+    },
+    {
+      "item": "175g unsalted butter"
+    },
+    {
+      "item": "3 eggs"
+    },
+    {
+      "item": "225g light muscovado sugar"
+    },
+    {
+      "item": "75g self raising flour"
+    },
+    {
+      "item": "½ tsp baking powder"
+    },
+    {
+      "item": "100g roasted, salted large peanuts, chopped"
+    }
+  ],
+  "instructions": [],
+  "nutrition": {
+    "Energy": "937.216kJ 224.0kcal",
+    "Fat": "13.1g",
+    "Saturated Fat": "7.0g",
+    "Sugars": "22.6g",
+    "Salt": "0.4g"
+  },
+  "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/s/228_p14_sea-salt-brownies-pic_2048x2048.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"
+}
