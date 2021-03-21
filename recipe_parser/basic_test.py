@@ -1,26 +1,26 @@
 import json
 import unittest
 
-from recipe_parser.parser import Parser
+from recipe_parser.parser import get_recipe, get_json
 from recipe_parser.recipe import *
 
 url_beef = 'https://www.waitrose.com/content/waitrose/en/home/recipes/recipe_directory/p/pulled-beef-saladwithmintavocado0.A4.html'
 
 
-class test_Parser_beef(unittest.TestCase):
+class test_Parser_Beef(unittest.TestCase):
 
     def test_parse_html(self):
-        recipe = Parser(url_beef).recipe()
+        recipe = get_recipe(url_beef, False)
         my_recipe = Recipe("Pulled beef salad with mint & avocado", [Tag("Gluten Free")],
                            Planing("PT10M", "PT30M", "PT40M", "2"),
                            [Ingredient('380g pack slow cooked beef brisket'),
                             Ingredient('2 echalion shallots, thinly sliced into rings'),
                             Ingredient('2 essential Lemons, juice reserved'),
-                            Ingredient('3 tbsp Cooks\' Ingredients Thai Sweet Chilli Sauce'),
+                            Ingredient('3 tbsp Cooks’ Ingredients Thai Sweet Chilli Sauce'),
                             Ingredient('1 x 350g tub Thai Sticky Rice'),
                             Ingredient('1 Waitrose 1 Perfectly Ripe Extra Large Avocado, stoned and sliced'),
                             Ingredient('½ x 25g pack mint, leaves picked'),
-                            Ingredient('1 Cooks\' Ingredients Red Thai Chilli, thinly sliced')],
+                            Ingredient('1 Cooks’ Ingredients Red Thai Chilli, thinly sliced')],
                            [Step(
                                "1. Preheat the oven to 200°C, gas mark 6. Cook the beef for 30 minutes, following pack instructions. Discard any large pieces of fat from the liquor before you cook."),
                                Step(
@@ -33,7 +33,7 @@ class test_Parser_beef(unittest.TestCase):
                            {'Energy': '3,226kJ 768kcals', 'Fat': '29g', 'Saturated Fat': '7.9g', 'Carbohydrate': '78g',
                             'Sugars': '17g',
                             'Protein': '44g', 'Salt': '1.3g', 'Fibre': '8g'},
-                           "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/p/WW-Pulled-Beef-Mint-Avocado-Salad-Shroud.gif/_jcr_content/renditions/cq5dam.thumbnail.200.200.png"
+                           "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/p/WW-Pulled-Beef-Mint-Avocado-Salad-Shroud.gif/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"
                            )
         # if not self.assertEqual(str(my_recipe), str(recipe)):
         self.assertEqual(my_recipe.title, recipe.title)
@@ -45,8 +45,8 @@ class test_Parser_beef(unittest.TestCase):
         self.assertEqual(my_recipe.image_url, recipe.image_url)
 
     def test_get_json(self):
-        jsonStr = Parser(url_beef).get_json()
-        my_jsonStr = json.JSONEncoder(ensure_ascii=False).encode(
+        json_str = get_json(url_beef, False)
+        my_json_str = json.JSONEncoder(ensure_ascii=False, indent=3).encode(
             {
                 "title": "Pulled beef salad with mint & avocado",
                 "tags": [
@@ -71,7 +71,7 @@ class test_Parser_beef(unittest.TestCase):
                         "item": "2 essential Lemons, juice reserved"
                     },
                     {
-                        "item": "3 tbsp Cooks' Ingredients Thai Sweet Chilli Sauce"
+                        "item": "3 tbsp Cooks’ Ingredients Thai Sweet Chilli Sauce"
                     },
                     {
                         "item": "1 x 350g tub Thai Sticky Rice"
@@ -83,7 +83,7 @@ class test_Parser_beef(unittest.TestCase):
                         "item": "½ x 25g pack mint, leaves picked"
                     },
                     {
-                        "item": "1 Cooks' Ingredients Red Thai Chilli, thinly sliced"
+                        "item": "1 Cooks’ Ingredients Red Thai Chilli, thinly sliced"
                     }
                 ],
                 "instructions": [
@@ -114,9 +114,9 @@ class test_Parser_beef(unittest.TestCase):
                     "Fibre": "8g"
                 }
                 ,
-                "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/p/WW-Pulled-Beef-Mint-Avocado-Salad-Shroud.gif/_jcr_content/renditions/cq5dam.thumbnail.200.200.png"
+                "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/p/WW-Pulled-Beef-Mint-Avocado-Salad-Shroud.gif/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"
             })
-        self.assertEqual(my_jsonStr, jsonStr)
+        self.assertEqual(my_json_str, json_str)
 
 
 if __name__ == '__main__':
