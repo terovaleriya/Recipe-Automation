@@ -7,13 +7,16 @@ from recipe_parser.parser import get_json
 
 
 ingredients = set()
-for file in os.listdir("recipes_json_A4_plane"):
-    with open("recipes_json_A4_plane/" + file) as f:
+# ingredients = []
+
+for file in os.listdir("recipes_json"):
+    with open("recipes_json/" + file) as f:
         data = json.loads(f.readline())["ingredients"]
         for i in data:
+            # ingredients.add(i["item"])
             ingredients.add(i["item"])
 
-ingredients_txt = open("ingredients.txt", "w")
+ingredients_txt = open("ingredients_new.txt", "w")
 
 for i in ingredients:
     ingredients_txt.write(i + "\n")
