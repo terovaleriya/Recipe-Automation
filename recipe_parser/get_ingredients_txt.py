@@ -16,7 +16,7 @@ for file in os.listdir("recipes_json"):
             # ingredients.add(i["item"])
             ingredients.add(i["item"])
 
-ingredients_txt = open("ingredients_new.txt", "w")
+ingredients_txt = open("ingredients.txt", "w")
 
 for i in ingredients:
     ingredients_txt.write(i + "\n")
