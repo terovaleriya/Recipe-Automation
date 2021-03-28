@@ -1,4 +1,3 @@
-# TODO юнит тесты
 # TODO переписать получше
 # TODO улучшить грамматику
 
@@ -44,17 +43,18 @@ class Grammar:
         with open(file_name) as f:
             lines = f.readlines()
             for line in lines:
-                if line.endswith('\n'):
-                    line = line[:-1]
+                line = line.strip()
+                if line == '':
+                    continue
                 name, rules = self.parse_grammar_line(line)
                 for rule in rules:
                     for i in range(len(rule)):
                         if rule[i][1] == 'default':
                             rule[i] = (self.get_default_function(name), 'default')
                 self.rules[name] = rules
-        print(self.RESULT)
-        for key in self.rules:
-            print(key, self.rules[key])
+        # print(self.RESULT)
+        # for key in self.rules:
+        #     print(key, self.rules[key])
 
     def parse_text(self, text, node):
         hash_key = (text, str(node))
