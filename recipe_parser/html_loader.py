@@ -8,7 +8,6 @@ from urllib3 import Retry
 
 # загружаем HTML страницу по url
 def get_html(url) -> str:
-    success = True
     logging.basicConfig(level=logging.DEBUG)
     s = requests.Session()
 
@@ -33,7 +32,6 @@ def get_html(url) -> str:
     return page_data
 
 
-# теперь у нас есть HTML файл, чтобы парсить его, преобразуем в soup
-def get_soup(file) -> BeautifulSoup:
-    page_data = file.read()
-    return BeautifulSoup(page_data, "html.parser")
+# теперь у нас есть HTML строка (файл), чтобы парсить ее, преобразуем в soup
+def get_soup(html_page) -> BeautifulSoup:
+    return BeautifulSoup(html_page, "html.parser")
