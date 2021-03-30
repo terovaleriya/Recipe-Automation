@@ -17,4 +17,6 @@ for file in os.listdir(json_folder):
 
 ingredients_txt = open(to_file, "w")
 for i in ingredients:
-    ingredients_txt.write(i + "\n")
+    ingredients_txt.write(i)
+    if i is not list(ingredients)[-1]:
+        ingredients_txt.write("\n")

@@ -3,14 +3,14 @@ import re
 
 from bs4 import BeautifulSoup
 
-from recipe_parser.get_recipe_soup import recipe_content
+from recipe_parser.html_loader import get_soup
 from recipe_parser.recipe import *
 
 
 def get_title(recipe: BeautifulSoup) -> str:
-    title = recipe.find('h2').text
-    assert title is not None
-    return title.strip()
+    title = recipe.find('h2').text.strip()
+    assert title
+    return title
 
 
 def get_tags(recipe: BeautifulSoup) -> List[Tag]:
@@ -35,39 +35,52 @@ def get_planning(recipe: BeautifulSoup) -> Planing:
     return Planing(prep_time, cook_time, total_time, serves)
 
 
-def get_ingredients(recipe: BeautifulSoup) -> List[Ingredient]:
-    ingredients_list = recipe.find("div", {'class': re.compile('parbase ingredients text.*')})
-    if ingredients_list.find('div', class_="text"):
-        ingredients_list = ingredients_list.find('div', class_="text")
-        ingredients_list = ingredients_list.text.split('\n')
+# getting method and ingredients strategy is the same
+def get_i(recipe: BeautifulSoup, pattern):
+    templist = recipe.find("div", {'class': pattern})
+    if not templist.text.strip():
+        templist = recipe.find("div", class_="parbase additionalinfo text")
+    if templist.find("div", class_="text"):
+        templist = templist.find('div', class_="text")
+    ilist = []
+    if templist.find("ol"):
+        for item in templist.findAll("ol"):
+            ilist.append(item.text)
     else:
-        ingredients_list = ingredients_list.find_all("p")
-        ingredients_list = [i.get_text().replace("\n", "") for i in ingredients_list]
-    all_ingredients: List[Ingredient] = []
+        ilist = templist.text.split('\n')
+    return ilist
+
+
+def get_ingredients(recipe: BeautifulSoup) -> List[Ingredient]:
+    ingredients_list = get_i(recipe, re.compile('parbase ingredients text.*'))
+    ingredients: List[Ingredient] = []
     for ingredient in ingredients_list:
-        ingredient = ingredient.replace("• ", "").replace("• ;", "").replace("*", "").strip()
-        comment = ingredient.startwith("(") and ingredient.endswith(")")
+        ingredient = ingredient.replace("• ", "").replace("*", "").replace("", " ")
+        ingredient = re.sub(' +', ' ', ingredient)
+        comment = ingredient.startswith("(") and ingredient.endswith(")")
+        ingredient = ingredient.strip()
         if ingredient and not ingredient.isupper() and not ingredient.endswith(":") and not comment:
-            all_ingredients.append(Ingredient(ingredient))
-    assert all_ingredients is not None
-    return all_ingredients
+            ingredients.append(Ingredient(ingredient))
+    assert ingredients
+    return ingredients
 
 
 def get_instructions(recipe: BeautifulSoup) -> List[Step]:
-    instructions_list = recipe.find('div', {'class', re.compile("method parbase text.*")})
-    if instructions_list.find('div', class_="text"):
-        instructions_list = instructions_list.find('div', class_="text")
-        instructions_list = instructions_list.text.split('\n')
-    else:
-        instructions_list = instructions_list.find_all("p")
-        instructions_list = [i.get_text().replace("\n", "") for i in instructions_list]
-
-    all_instructions: List[Step] = []
+    instructions_list = get_i(recipe, re.compile("method parbase text.*"))
+    # избавляемся от Cook's tip
+    strings_with_substring = [string for string in instructions_list if
+                              string.startswith(("Cook’s tip", "Cook's tip", "Cook's Tip"))]
+    if strings_with_substring:
+        instructions_list = instructions_list[:instructions_list.index(strings_with_substring[0])]
+    instructions: List[Step] = []
     for instruction in instructions_list:
-        ingredient = instruction.replace("• ", "").replace("• ;", "").strip()
-        if ingredient and not ingredient.isupper() and not ingredient.endswith(":"):
-            all_instructions.append(Step(ingredient))
-    return all_instructions
+        instruction = instruction.replace("• ", "")
+        instruction = re.sub(' +', ' ', instruction).strip()
+        instruction = re.sub(re.compile('^\d+(\s*\.|\s)'), "", instruction)
+        instruction = instruction.replace("\n", " ")
+        if instruction and not instruction.isupper() and not instruction.endswith(":"):
+            instructions.append(Step(instruction.strip()))
+    return instructions
 
 
 def get_image(recipe: BeautifulSoup) -> str:
@@ -86,14 +99,21 @@ def get_nutrition(recipe: BeautifulSoup) -> dict:
         return {i.text.strip(): cell.text.strip() for i, cell in zip(th, td)}
 
 
-def get_recipe(url):
-    recipe = recipe_content(url)
+def get_recipe(file):
+    data = file.read()
+    recipe = recipe_content(data)
     return Recipe(get_title(recipe), get_tags(recipe), get_planning(recipe), get_ingredients(recipe),
                   get_instructions(recipe),
                   get_nutrition(recipe), get_image(recipe))
 
 
 # getting json out of parsed Recipe
-def get_json(url):
-    recipe = get_recipe(url)
+def get_json(file):
+    recipe = get_recipe(file)
     return json.dumps(recipe.__dict__, default=lambda o: o.__dict__, ensure_ascii=False)
+
+
+def recipe_content(html_data) -> BeautifulSoup:
+    recipe = get_soup(html_data).find('div', {'itemtype': "http://schema.org/Recipe"})
+    assert recipe
+    return recipe

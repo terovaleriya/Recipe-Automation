@@ -5,8 +5,11 @@ from recipe_parser.html_loader import get_html, get_soup
 
 # страница с рецептами Waitrose
 url = "https://www.waitrose.com/content/waitrose/en/home/recipes.html"
+folder = "files"
+if not os.path.exists(folder):
+    os.makedirs(folder)
 
-os.chdir("files")
+os.chdir(folder)
 
 # файл, куда будем писать url
 to_file = "recipes_urls.txt"
@@ -35,14 +38,14 @@ for category in categories:
 
             recipes = [recipe['href'] for recipe in recipes]
             recipes = [
-                recipe if recipe.startswith("https://www.waitrose.com") else 'https://www.waitrose.com' + recipe + ".html"
+                recipe if recipe.startswith(
+                    "https://www.waitrose.com") else 'https://www.waitrose.com' + recipe + ".html"
                 for recipe in recipes]
             recipes = [re.findall('.+?\.html', recipe)[0] for recipe in recipes]
             distribution.write("Url рецептов: " + "\n".join(recipes) + "\n")
             all_recipes.extend(recipes)
     except ConnectionError:
         print("Couldn't get " + category)
-
 
 # превращаем полученный url в А4-url
 all_recipes = [recipe[:-5] + ".A4" + recipe[-5:] for recipe in all_recipes]
@@ -56,4 +59,3 @@ with open(to_file, 'w') as f:
         f.write(recipe_url)
         if recipe_url is not list(all_recipes)[-1]:
             f.write("\n")
-
