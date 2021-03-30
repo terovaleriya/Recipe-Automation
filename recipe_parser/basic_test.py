@@ -4,13 +4,12 @@ import unittest
 from recipe_parser.parser import get_recipe, get_json
 from recipe_parser.recipe import *
 
-url_beef = 'https://www.waitrose.com/content/waitrose/en/home/recipes/recipe_directory/p/pulled-beef-saladwithmintavocado0.A4.html'
 
-
-class test_Parser_Beef(unittest.TestCase):
+class TestParserBeef(unittest.TestCase):
 
     def test_parse_html(self):
-        recipe = get_recipe(url_beef, False)
+        beef_file = open('recipes_html_A4/pulled-beef-saladwithmintavocado0.A4.html', "r")
+        recipee = get_recipe(beef_file)
         my_recipe = Recipe("Pulled beef salad with mint & avocado", [Tag("Gluten Free")],
                            Planing("PT10M", "PT30M", "PT40M", "2"),
                            [Ingredient('380g pack slow cooked beef brisket'),
@@ -36,17 +35,19 @@ class test_Parser_Beef(unittest.TestCase):
                            "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/p/WW-Pulled-Beef-Mint-Avocado-Salad-Shroud.gif/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"
                            )
         # if not self.assertEqual(str(my_recipe), str(recipe)):
-        self.assertEqual(my_recipe.title, recipe.title)
-        self.assertEqual(str(my_recipe.tags), str(recipe.tags))
-        self.assertEqual(str(my_recipe.planning), str(recipe.planning))
-        self.assertEqual(str(my_recipe.ingredients), str(recipe.ingredients))
-        self.assertEqual(str(my_recipe.instructions), str(recipe.instructions))
-        self.assertEqual(my_recipe.nutrition, recipe.nutrition)
-        self.assertEqual(my_recipe.image_url, recipe.image_url)
+        self.assertEqual(my_recipe.title, recipee.title)
+        self.assertEqual(str(my_recipe.tags), str(recipee.tags))
+        self.assertEqual(str(my_recipe.planning), str(recipee.planning))
+        self.assertEqual(str(my_recipe.ingredients), str(recipee.ingredients))
+        self.assertEqual(str(my_recipe.instructions), str(recipee.instructions))
+        self.assertEqual(my_recipe.nutrition, recipee.nutrition)
+        self.assertEqual(my_recipe.image_url, recipee.image_url)
+        beef_file.close()
 
     def test_get_json(self):
-        json_str = get_json(url_beef, False)
-        my_json_str = json.JSONEncoder(ensure_ascii=False, indent=3).encode(
+        beef_file = open('recipes_html_A4/pulled-beef-saladwithmintavocado0.A4.html', "r")
+        json_str = get_json(beef_file)
+        my_json_str = json.JSONEncoder(ensure_ascii=False).encode(
             {
                 "title": "Pulled beef salad with mint & avocado",
                 "tags": [
@@ -117,6 +118,7 @@ class test_Parser_Beef(unittest.TestCase):
                 "image_url": "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/p/WW-Pulled-Beef-Mint-Avocado-Salad-Shroud.gif/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"
             })
         self.assertEqual(my_json_str, json_str)
+        beef_file.close()
 
 
 if __name__ == '__main__':
