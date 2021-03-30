@@ -1,23 +1,20 @@
 import json
 import os
 
-from recipe_parser.parser import get_json
+# where we take jsons from
+json_folder = "recipes_json"
 
-# битые по каким-то причинам html, потом разберусь
-
+# where we want put ingredients
+to_file = "ingredients.txt"
 
 ingredients = set()
-# ingredients = []
 
-for file in os.listdir("recipes_json"):
-    with open("recipes_json/" + file) as f:
+for file in os.listdir(json_folder):
+    with open(json_folder + "/" + file) as f:
         data = json.loads(f.readline())["ingredients"]
         for i in data:
-            # ingredients.add(i["item"])
             ingredients.add(i["item"])
 
-ingredients_txt = open("ingredients.txt", "w")
-
+ingredients_txt = open(to_file, "w")
 for i in ingredients:
     ingredients_txt.write(i + "\n")
-
