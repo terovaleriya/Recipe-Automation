@@ -1,11 +1,17 @@
 import re
 
-from recipe_parser.parser import Soup
+from recipe_parser.html_loader import get_html, get_soup
 
+# страница с рецептами Waitrose
 url = "https://www.waitrose.com/content/waitrose/en/home/recipes.html"
 
+# файл, куда будем писать url
+to_file = "recipes_urls_A4.txt"
+
 # достаем список категорий
-soup = Soup(url).soup.find('div', {'class': "l-content"})
+page_html = get_html(url)
+soup = get_soup(page_html)
+soup = soup.find('div', {'class': "l-content"})
 categories = soup.findAll("a", href=re.compile("/home/recipes/.+$"))
 categories = [category['href'] for category in categories]
 categories = [category if category.startswith("https://www.waitrose.com") else 'https://www.waitrose.com' + category for
@@ -16,9 +22,10 @@ categories = set(categories)
 # recipes_per_category_*.txt – распределение рецептов по категориям, url могут повторяться
 #
 all_recipes = []
-distribution = open('files/recipes_per_category_A4.txt', 'w')
+distribution = open('recipes_per_category_A4.txt', 'w')
 for category in categories:
-    category_soup = Soup(category).soup
+    category_html = get_html(category)
+    category_soup = get_soup(category_html)
     recipes = category_soup.findAll("a", href=re.compile("/home/recipes/recipe_directory.+$"))
     distribution.write("\nКатегория: " + category + "\n")
     distribution.write("Рецептов в категории: " + str(len(recipes)) + "\n")
@@ -39,7 +46,7 @@ all_recipes = [recipe[:-5] + ".A4" + recipe[-5:] for recipe in all_recipes]
 all_recipes = set(all_recipes)
 
 # recipes_urls_*.txt – уникальный список всех url рецептов
-with open('files/recipes_urls_A4.txt', 'w') as f:
+with open(to_file, 'w') as f:
     for recipe_url in all_recipes:
         f.write(recipe_url + "\n")
 f.close()

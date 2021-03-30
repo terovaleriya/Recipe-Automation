@@ -7,7 +7,7 @@ from urllib3 import Retry
 
 
 # загружаем HTML страницу по url
-def get_html(url) -> (str, bool):
+def get_html(url) -> str:
     success = True
     logging.basicConfig(level=logging.DEBUG)
     s = requests.Session()
@@ -25,12 +25,12 @@ def get_html(url) -> (str, bool):
     # если мы все-таки не смогли получить страницу (потому что ее там больше нет или еще 1050 причин почему),
     # сохраним эту инфу
     if get.status_code != 200:
-        success = False
+        raise ConnectionError
 
     get.encoding = "utf-8"
     page_data = get.text
 
-    return page_data, success
+    return page_data
 
 
 # теперь у нас есть HTML файл, чтобы парсить его, преобразуем в soup

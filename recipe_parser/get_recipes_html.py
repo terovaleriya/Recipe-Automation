@@ -1,17 +1,18 @@
 import os
 import re
 
-from recipe_parser.get_recipe_soup import soup
+from recipe_parser.html_loader import get_html
 
-if not os.path.exists("recipes_html_A4"):
+if not os.path.exists("recipes_html"):
     os.makedirs("recipes_html_A4")
 
-urls = open("files/recipes_urls_A4.txt", "r")
+urls = open("files/recipes_urls.txt", "r")
 for url in urls.read().split("\n"):
     id = re.findall('[^/]+(?=/$|$)', url)[0]
-    if not os.path.exists('recipes_html_A4/' + id):
-        cur_soup, page = soup(url)
-        if page:
-            with open('recipes_html_A4/' + id, 'w') as f:
-                f.write(str(cur_soup))
-            f.close()
+    if not os.path.exists('recipes_html/' + id):
+        try:
+            cur_soup = get_html(url)
+            with open('recipes_html/' + id, 'w') as f:
+                f.write(cur_soup)
+        except ConnectionError:
+            print("Can't get html from " + url)
