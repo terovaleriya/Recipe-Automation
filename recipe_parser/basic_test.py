@@ -2,24 +2,19 @@ import json
 import os
 import re
 import unittest
-import pytest
 
 from recipe_parser.html_loader import get_html
 from recipe_parser.parser import get_recipe, get_json
 from recipe_parser.recipe import *
 
-unittest.TestLoader.sortTestMethodsUsing = None
+unittest.sortTestMethodsUsing = None
 
-os.chdir("recipe_parser/test/")
-
-
-def pytest_namespace():
-    return {'file_path': ''}
+file = "pulled-beef-saladwithmintavocado0.A4.html"
 
 
 class TestParserBeef(unittest.TestCase):
-    @pytest.fixture
-    def TestLoadHtml(self):
+
+    def setUp(self):
         beef_url = "https://www.waitrose.com/content/waitrose/en/home/recipes/recipe_directory/p/pulled-beef-saladwithmintavocado0.A4.html"
 
         id = re.findall('[^/]+(?=/$|$)', beef_url)[0]
@@ -29,12 +24,10 @@ class TestParserBeef(unittest.TestCase):
                 f.write(cur_soup)
         except ConnectionError:
             print("Can't get html from " + beef_url)
-        pytest.file_path = id + ".html"
-        
 
-    def TestParseHtml(self):
-        beef_file = open(pytest.file_path, "r")
-        recipee = get_recipe(beef_file)
+    def test_step2_parse(self):
+        beef_file = open(file, "r")
+        recipe = get_recipe(beef_file)
         my_recipe = Recipe("Pulled beef salad with mint & avocado", [Tag("Gluten Free")],
                            Planing("PT10M", "PT30M", "PT40M", "2"),
                            [Ingredient('380g pack slow cooked beef brisket'),
@@ -46,31 +39,30 @@ class TestParserBeef(unittest.TestCase):
                             Ingredient('½ x 25g pack mint, leaves picked'),
                             Ingredient('1 Cooks’ Ingredients Red Thai Chilli, thinly sliced')],
                            [Step(
-                               "1. Preheat the oven to 200°C, gas mark 6. Cook the beef for 30 minutes, following pack instructions. Discard any large pieces of fat from the liquor before you cook."),
+                               "Preheat the oven to 200°C, gas mark 6. Cook the beef for 30 minutes, following pack instructions. Discard any large pieces of fat from the liquor before you cook."),
                                Step(
-                                   "2. Toss the shallots with 5 tbsp lemon juice and the sweet chilli sauce to create a dressing, then set aside."),
+                                   "Toss the shallots with 5 tbsp lemon juice and the sweet chilli sauce to create a dressing, then set aside."),
                                Step(
-                                   "3. When the meat is cooked, lift it from the juices and pull to shreds using two forks. Add 2 tbsp of the cooking juices to the shallots and sweet chilli sauce."),
-                               Step("4. Meanwhile, heat the sticky rice according to the pack instructions."),
+                                   "When the meat is cooked, lift it from the juices and pull to shreds using two forks. Add 2 tbsp of the cooking juices to the shallots and sweet chilli sauce."),
+                               Step("Meanwhile, heat the sticky rice according to the pack instructions."),
                                Step(
-                                   "5. Toss the meat with the dressing, avocado, mint leaves and fresh Thai chilli, then serve straight away with the sticky rice.")],
+                                   "Toss the meat with the dressing, avocado, mint leaves and fresh Thai chilli, then serve straight away with the sticky rice.")],
                            {'Energy': '3,226kJ 768kcals', 'Fat': '29g', 'Saturated Fat': '7.9g', 'Carbohydrate': '78g',
                             'Sugars': '17g',
                             'Protein': '44g', 'Salt': '1.3g', 'Fibre': '8g'},
                            "//d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/p/WW-Pulled-Beef-Mint-Avocado-Salad-Shroud.gif/_jcr_content/renditions/cq5dam.thumbnail.400.400.png"
                            )
-        # if not self.assertEqual(str(my_recipe), str(recipe)):
-        self.assertEqual(my_recipe.title, recipee.title)
-        self.assertEqual(str(my_recipe.tags), str(recipee.tags))
-        self.assertEqual(str(my_recipe.planning), str(recipee.planning))
-        self.assertEqual(str(my_recipe.ingredients), str(recipee.ingredients))
-        self.assertEqual(str(my_recipe.instructions), str(recipee.instructions))
-        self.assertEqual(my_recipe.nutrition, recipee.nutrition)
-        self.assertEqual(my_recipe.image_url, recipee.image_url)
+        self.assertEqual(my_recipe.title, recipe.title)
+        self.assertEqual(str(my_recipe.tags), str(recipe.tags))
+        self.assertEqual(str(my_recipe.planning), str(recipe.planning))
+        self.assertEqual(str(my_recipe.ingredients), str(recipe.ingredients))
+        self.assertEqual(str(my_recipe.instructions), str(recipe.instructions))
+        self.assertEqual(my_recipe.nutrition, recipe.nutrition)
+        self.assertEqual(my_recipe.image_url, recipe.image_url)
         beef_file.close()
 
-    def TestGetJson(self):
-        beef_file = open(pytest.file_path, "r")
+    def test_step3_json(self):
+        beef_file = open(file, "r")
         json_str = get_json(beef_file)
         my_json_str = json.JSONEncoder(ensure_ascii=False).encode(
             {
@@ -114,19 +106,19 @@ class TestParserBeef(unittest.TestCase):
                 ],
                 "instructions": [
                     {
-                        "step": "1. Preheat the oven to 200°C, gas mark 6. Cook the beef for 30 minutes, following pack instructions. Discard any large pieces of fat from the liquor before you cook."
+                        "step": "Preheat the oven to 200°C, gas mark 6. Cook the beef for 30 minutes, following pack instructions. Discard any large pieces of fat from the liquor before you cook."
                     },
                     {
-                        "step": "2. Toss the shallots with 5 tbsp lemon juice and the sweet chilli sauce to create a dressing, then set aside."
+                        "step": "Toss the shallots with 5 tbsp lemon juice and the sweet chilli sauce to create a dressing, then set aside."
                     },
                     {
-                        "step": "3. When the meat is cooked, lift it from the juices and pull to shreds using two forks. Add 2 tbsp of the cooking juices to the shallots and sweet chilli sauce."
+                        "step": "When the meat is cooked, lift it from the juices and pull to shreds using two forks. Add 2 tbsp of the cooking juices to the shallots and sweet chilli sauce."
                     },
                     {
-                        "step": "4. Meanwhile, heat the sticky rice according to the pack instructions."
+                        "step": "Meanwhile, heat the sticky rice according to the pack instructions."
                     },
                     {
-                        "step": "5. Toss the meat with the dressing, avocado, mint leaves and fresh Thai chilli, then serve straight away with the sticky rice."
+                        "step": "Toss the meat with the dressing, avocado, mint leaves and fresh Thai chilli, then serve straight away with the sticky rice."
                     }
                 ],
                 "nutrition": {
@@ -144,6 +136,8 @@ class TestParserBeef(unittest.TestCase):
             })
         self.assertEqual(my_json_str, json_str)
         beef_file.close()
+
+        self.addCleanup(os.remove, file)
 
 
 if __name__ == '__main__':

@@ -5,7 +5,7 @@ import os
 json_folder = "recipes_json"
 
 # where we want put ingredients
-to_file = "ingredients.txt"
+to_file = "files/ingredients.txt"
 
 ingredients = set()
 
