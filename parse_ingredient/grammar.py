@@ -91,3 +91,6 @@ class Grammar:
 
     def parse(self, text):
         return self.parse_text(text.lower(), self.RESULT)
+
+    def clear_cache(self):
+        self.cache.clear()

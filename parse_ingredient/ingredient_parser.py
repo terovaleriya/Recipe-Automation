@@ -30,6 +30,7 @@ def parse_ingredient(raw_ingredient, grammar):
         raw_ingredient = raw_ingredient[:comma_pos].strip()
         ingredient = raw_ingredient
 
+    grammar.clear_cache()
     for i in range(1, len(raw_ingredient) + 1):
         if not is_end_of_word(raw_ingredient, i - 1):
             continue

@@ -2,13 +2,13 @@ UOM = mg | g | kg | litre | ml | cl | m | mm | cm | ltr | litres | oz
 UOMCOOK = UOMCOOKMODIF UOMCOOK | tbsp | tsp | tablespoon
 UOMCOOKMODIF = heaped
 
-DISCRETE = s | each | roll | rolls | sheet | sheets | bunch | bunches | pair | pairs | leaf | leaves | slice | slices
+DISCRETE = s | each | roll | rolls | sheet | sheets | bunch | bunches | pair | pairs | leaf | leaves | slice | slices | rasher | rashers
 
 NUMBER = default | NUMBER DENOMINATOR | SPECIALNUMBER
 DENOMINATOR = ⁄ NUMBER | / NUMBER
 SPECIALNUMBER = ½ | ¼ | ¾ | ⅓ | ⅛
 
-MODIFIER = minimum | min
+MODIFIER = minimum | min | about
 
 QUANTITY = NUMBER | NUMBER UOM | NUMBER UOMCOOK | NUMBER DISCRETE | XNUMBER QUANTITY | MODIFIER QUANTITY
 XNUMBER = NUMBER x | NUMBER \_
