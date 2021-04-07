@@ -23,7 +23,7 @@ async def create_or_update_recipe(recipe_id: int, title: str) -> None:
 
 async def main():
     await db.set_bind("postgresql://racine@localhost/stepa")
-    await create_or_update_recipe(6, "Печенная жопа1")
+    await create_or_update_recipe(6, "Печенная дыня")
     recipe = await retrieve_recipe(6)
     print(recipe)
 
