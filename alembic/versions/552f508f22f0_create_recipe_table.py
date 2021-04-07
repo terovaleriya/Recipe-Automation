@@ -59,9 +59,5 @@ def upgrade():
                     sa.Column('ingredient', INTEGER, ForeignKey('products.id')))
 
 
-
-    
-
-
 def downgrade():
     op.drop_table('recipe')

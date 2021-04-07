@@ -7,6 +7,7 @@ from core import schema
 
 db: Gino = Gino()
 
+
 # RecipesIngredients = Table('recipes_ingredients', Column('recipe' ,Integer, ForeignKey('ingredients.id')),
 #                            Column('ingredient', Integer, ForeignKey('recipes.id')))
 #
@@ -46,6 +47,10 @@ class Ingredients(db.Model):
     comment = Column(String)
     raw_string = Column(String)
 
+    def as_schema(self) -> schema.Ingredient:
+        return schema.Ingredient(ingredient_id=self.id, name=self.name, quantity=self.quantity, comment=self.comment,
+                                 raw_string=self.raw_string)
+
 
 class Products(db.Model):
     __tablename__ = 'products'
@@ -53,3 +58,6 @@ class Products(db.Model):
     name = Column(String)
     size = Column(String)
     image_url = Column(String)
+
+    def as_schema(self) -> schema.Product:
+        return schema.Product(product_id=self.id, name=self.name, size=self.size, image_url=self.image_url)
