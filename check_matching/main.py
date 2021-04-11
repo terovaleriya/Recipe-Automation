@@ -6,7 +6,7 @@ def instructions():
     print('Данные для проверки будут выводиться в следующем формате:')
     print('В первой строке будет отображаться ингредиент')
     print('В следующих строках будут находиться варианты продуктов')
-    print('Введите номер продукта, который подходит под ингредиент')
+    print('Введите номера продуктов (через пробел), который подходит под ингредиент')
     print('Если ничего не подходит, введите "no" (или просто "n")')
     print('Если хотите временно пропустить ингредиент, введите "skip" (или "s")')
     print('Если хотите посмотреть эти инструкции, введите "help" (или "h")')
@@ -40,11 +40,11 @@ for match in matching_to_check:
     if len(ingred_name_list) != 1:
         continue
 
-    ingred_name = ingred_name_list[0]['name']
+    raw_ingred_name = ingred_name_list[0]['raw']
 
-    print(ingred_name)
+    print(raw_ingred_name)
     print()
-    for num, prod_name in enumerate(prod_name_list):
+    for num, prod_name in enumerate(prod_name_list, start=1):
         print(f"{num}. {prod_name}")
 
     while True:
@@ -55,7 +55,7 @@ for match in matching_to_check:
             instructions()
             continue
         elif command.startswith('e'):
-            break
+            exit(0)
         elif command.startswith('s'):
             break
         elif command.startswith('n'):
@@ -65,19 +65,16 @@ for match in matching_to_check:
             matching_db.save_into_file('../database_phantom/db_matching.txt')
             break
         else:
-            if command.isnumeric():
-                command = int(command)
-                if 0 <= command < len(prod_name_list):
-                    matching_db.insert_where_col_equals({
-                        'checked': True,
-                        'answer': prod_ids[command],
-                    }, 'ingredientId', ingred_id)
-                    matching_db.save_into_file('../database_phantom/db_matching.txt')
-                    print()
-                    break
-                else:
-                    print('Введена неверная команда. Введите "help" или "h", чтобы узнать о доступных командах')
-                    continue
+            items = command.split()
+            if all(map(lambda x: x.isnumeric() and 0 <= int(x) < len(prod_name_list), items)):
+                pos = [int(x) for x in items]
+                matching_db.insert_where_col_equals({
+                    'checked': True,
+                    'answer': json.dumps([prod_ids[p - 1] for p in pos]),
+                }, 'ingredientId', ingred_id)
+                matching_db.save_into_file('../database_phantom/db_matching.txt')
+                print()
+                break
             else:
                 print('Введена неверная команда. Введите "help" или "h", чтобы узнать о доступных командах')
                 continue

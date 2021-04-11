@@ -58,5 +58,9 @@ for ingred in ingredients:
         'checked': False,
         'answer': None,
     })
+    # matching_db.insert_where_col_equals({
+    #     'checked': False,
+    #     'answer': None,
+    # }, 'ingredientId', ingred['id'])
 
 matching_db.save_into_file('../database_phantom/db_matching.txt')
