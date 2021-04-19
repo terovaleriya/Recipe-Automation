@@ -2,9 +2,8 @@ from typing import Optional
 
 from core import schema, model
 
-# RECIPE
-from core.model import db
 
+# RECIPE
 
 async def retrieve_recipe_by_id(recipe_id: int) -> Optional[schema.Recipe]:
     obj = await model.Recipes.get(recipe_id)

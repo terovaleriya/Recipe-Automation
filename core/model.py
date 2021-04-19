@@ -1,11 +1,7 @@
 from gino import Gino
 from sqlalchemy import String, ForeignKey, Column, Integer
 from sqlalchemy.orm import relationship
-
-from sqlalchemy.ext.declarative import declarative_base
-
 from core import schema
-from recipe_parser.recipe import Tag, Planning, Ingredient, Step
 
 
 db: Gino = Gino()
