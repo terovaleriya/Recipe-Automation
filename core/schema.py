@@ -8,16 +8,77 @@ class Recipe:
 
 
 class Ingredient:
-    def __init__(self, ingredient_id: int, name: str, quantity: str, comment: str, raw_string: str):
+    def __init__(self, ingredient_id: int, raw_string: str, name: str = None, quantity: str = None,
+                 comment: str = None):
         self.ingredient_id = ingredient_id
+        self.raw_string = raw_string
         self.name = name
         self.quantity = quantity
         self.comment = comment
-        self.raw_string = raw_string
 
     def __str__(self) -> str:
         return str(self.ingredient_id) + ", " + self.name + ", " + \
                self.quantity + ", " + self.comment + ", " + self.raw_string
+
+
+class Instruction:
+    def __init__(self, instruction_id: int, instruction: str):
+        self.instruction_id = instruction_id
+        self.instruction = instruction
+
+    def __str__(self) -> str:
+        return str(self.instruction_id) + ", " + self.instruction
+
+
+class Tag:
+    def __init__(self, tag_id: int, tag: str):
+        self.tag_id = tag_id
+        self.tag = tag
+
+    def __str__(self) -> str:
+        return str(self.tag_id) + ", " + self.tag
+
+
+class Image:
+    def __init__(self, image_id: int, image: str):
+        self.image_id = image_id
+        self.image = image
+
+    def __str__(self) -> str:
+        return str(self.image_id) + ", " + self.image
+
+
+class Plan:
+    def __init__(self, planning_id: int, prep_time: str, cook_time: str, total_time: str, serves: str):
+        self.planning_id = planning_id
+        self.prep_time = prep_time
+        self.cook_time = cook_time
+        self.total_time = total_time
+        self.serves = serves
+
+    def __str__(self) -> str:
+        return str(self.planning_id) + ", " + self.prep_time + ", " + \
+               self.cook_time + ", " + self.total_time + ", " + self.serves
+
+
+class Nutrition:
+    def __init__(self, nutrition_id: int, energy: str, fat: str, saturated_fat: str, carbohydrate: str, sugars: str,
+                 protein: str,
+                 salt: str, fibre: str):
+        self.nutrition_id = nutrition_id
+        self.energy = energy
+        self.fat = fat
+        self.saturated_fat = saturated_fat
+        self.carbohydrate = carbohydrate
+        self.sugars = sugars
+        self.protein = protein
+        self.salt = salt
+        self.fibre = fibre
+
+    def __str__(self) -> str:
+        return str(self.nutrition_id) + ", " + self.energy + ", " + \
+               self.fat + ", " + self.saturated_fat + ", " + self.carbohydrate + ", " + self.sugars + ", " + \
+               self.protein + ", " + self.salt + ", " + self.fibre
 
 
 class Product:

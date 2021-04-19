@@ -35,7 +35,7 @@ depends_on = None
 def upgrade():
     op.create_table('recipes',
                     sa.Column('id', INTEGER, autoincrement=True, primary_key=True),
-                    sa.Column('title', String))
+                    sa.Column('title', String, nullable=False, unique=True))
 
     op.create_table('ingredients',
                     sa.Column('id', INTEGER, autoincrement=True, primary_key=True),
@@ -44,19 +44,65 @@ def upgrade():
                     sa.Column('comment', String),
                     sa.Column('raw_string', String))
 
+    op.create_table('instructions',
+                    sa.Column('id', INTEGER, autoincrement=True, primary_key=True),
+                    sa.Column('instruction', String))
+
     op.create_table('products',
                     sa.Column('id', INTEGER, autoincrement=True, primary_key=True),
                     sa.Column('name', String),
                     sa.Column('size', String),
                     sa.Column('image_url', String))
 
+    op.create_table('tags',
+                    sa.Column('id', INTEGER, autoincrement=True, primary_key=True),
+                    sa.Column('tag', String))
+
+    op.create_table('images',
+                    sa.Column('id', INTEGER, autoincrement=True, primary_key=True),
+                    sa.Column('image', String))
+
+    op.create_table('planning',
+                    sa.Column('id', INTEGER, autoincrement=True, primary_key=True),
+                    sa.Column('prep_time', String),
+                    sa.Column('cook_time', String), sa.Column('total_time', String), sa.Column('serves', String))
+
+    op.create_table('nutrition',
+                    sa.Column('id', INTEGER, autoincrement=True, primary_key=True),
+                    sa.Column('energy', String),
+                    sa.Column('fat', String), sa.Column('saturated_fat', String), sa.Column('carbohydrate', String),
+                    sa.Column('sugars', String), sa.Column('protein', String), sa.Column('salt', String),
+                    sa.Column('fibre', String))
+
     op.create_table('recipes_ingredients',
-                    sa.Column('recipe', INTEGER, ForeignKey('ingredients.id')),
-                    sa.Column('ingredient', INTEGER, ForeignKey('recipes.id')))
+                    sa.Column('id', INTEGER, autoincrement=True, primary_key=True),
+                    sa.Column('recipe', INTEGER, ForeignKey('ingredients.id', ondelete="CASCADE")),
+                    sa.Column('ingredient', INTEGER, ForeignKey('recipes.id', ondelete="CASCADE")))
 
     op.create_table('ingredients_products',
-                    sa.Column('product', INTEGER, ForeignKey('ingredients.id')),
-                    sa.Column('ingredient', INTEGER, ForeignKey('products.id')))
+                    sa.Column('id', INTEGER, autoincrement=True, primary_key=True),
+                    sa.Column('product', INTEGER, ForeignKey('ingredients.id', ondelete="CASCADE")),
+                    sa.Column('ingredient', INTEGER, ForeignKey('products.id', ondelete="CASCADE")))
+
+    op.create_table('recipes_tags',
+                    sa.Column('id', INTEGER, autoincrement=True, primary_key=True),
+                    sa.Column('recipe', INTEGER, ForeignKey('tags.id', ondelete="CASCADE")),
+                    sa.Column('tag', INTEGER, ForeignKey('recipes.id', ondelete="CASCADE")))
+
+    op.create_table('recipes_images',
+                    sa.Column('id', INTEGER, autoincrement=True, primary_key=True),
+                    sa.Column('recipe', INTEGER, ForeignKey('images.id', ondelete="CASCADE")),
+                    sa.Column('image', INTEGER, ForeignKey('recipes.id', ondelete="CASCADE")))
+
+    op.create_table('recipes_planning',
+                    sa.Column('id', INTEGER, autoincrement=True, primary_key=True),
+                    sa.Column('recipe', INTEGER, ForeignKey('planning.id', ondelete="CASCADE")),
+                    sa.Column('planning', INTEGER, ForeignKey('recipes.id', ondelete="CASCADE")))
+
+    op.create_table('recipes_nutrition',
+                    sa.Column('id', INTEGER, autoincrement=True, primary_key=True),
+                    sa.Column('recipe', INTEGER, ForeignKey('nutrition.id', ondelete="CASCADE")),
+                    sa.Column('nutrition', INTEGER, ForeignKey('recipes.id', ondelete="CASCADE")))
 
 
 def downgrade():
