@@ -29,7 +29,7 @@ class TestParserBeef(unittest.TestCase):
         beef_file = open(file, "r")
         recipe = get_recipe(beef_file)
         my_recipe = Recipe("Pulled beef salad with mint & avocado", [Tag("Gluten Free")],
-                           Planing("PT10M", "PT30M", "PT40M", "2"),
+                           Planning("PT10M", "PT30M", "PT40M", "2"),
                            [Ingredient('380g pack slow cooked beef brisket'),
                             Ingredient('2 echalion shallots, thinly sliced into rings'),
                             Ingredient('2 essential Lemons, juice reserved'),
