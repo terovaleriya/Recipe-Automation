@@ -1,8 +1,9 @@
+from typing import List
+
 from gino import Gino
 from sqlalchemy import String, ForeignKey, Column, Integer
 from sqlalchemy.orm import relationship
 from core import schema
-
 
 db: Gino = Gino()
 
@@ -17,8 +18,8 @@ db: Gino = Gino()
 class RecipesIngredients(db.Model):
     __tablename__ = 'recipes_ingredients'
     id = Column(Integer, primary_key=True)
-    recipe = Column(Integer, ForeignKey('ingredients.id'), primary_key=True)
-    ingredient = Column(Integer, ForeignKey('recipes.id'), primary_key=True)
+    recipe = Column(Integer, ForeignKey('recipes.id'), primary_key=True)
+    ingredient = Column(Integer, ForeignKey('ingredients.id'), primary_key=True)
 
 
 class RecipesTags(db.Model):
@@ -26,6 +27,13 @@ class RecipesTags(db.Model):
     id = Column(Integer, primary_key=True)
     recipe = Column(Integer, ForeignKey('tags.id'), primary_key=True)
     tag = Column(Integer, ForeignKey('recipes.id'), primary_key=True)
+
+
+class RecipesInstructions(db.Model):
+    __tablename__ = 'recipes_instructions'
+    id = Column(Integer, primary_key=True)
+    recipe = Column(Integer, ForeignKey('instructions.id'), primary_key=True)
+    instruction = Column(Integer, ForeignKey('recipes.id'), primary_key=True)
 
 
 class RecipesImages(db.Model):
@@ -61,11 +69,24 @@ class Recipes(db.Model):
     id = Column(Integer, autoincrement=True, primary_key=True)
     title = Column(String, nullable=False, unique=True)
 
-    ingredients = relationship("RecipesIngredients")
-    tags = relationship("RecipesTags")
-    images = relationship("RecipesImages")
-    planing = relationship("RecipesPlanning")
-    nutrition = relationship("RecipesNutrition")
+    ingredients = relationship("Ingredients", secondary="RecipesIngredients", backref="recipes")
+    tags = relationship("Tags", secondary="RecipesTags", backref="recipes")
+    images = relationship("Image", secondary="RecipesImages", backref="recipes")
+    planning = relationship("Planning", secondary="RecipesPlanning", backref="recipes")
+    nutrition = relationship("Nutrition", secondary="RecipesNutrition", backref="recipes")
+    instructions = relationship("Instruction", secondary="RecipesInstructions", backref="recipes")
+
+    # def __init__(self, **kw):
+    #     super().__init__(**kw)
+    #     self._ingredients: List = []
+    #
+    # @property
+    # def ingredient(self):
+    #     return self._ingredients
+    #
+    # @ingredient.setter
+    # def ingredient(self, ingredient):
+    #     self._ingredients.append(ingredient)
 
     def as_schema(self) -> schema.Recipe:
         return schema.Recipe(recipe_id=self.id, title=self.title)

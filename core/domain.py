@@ -2,8 +2,33 @@ from typing import Optional
 
 from core import schema, model
 
-
 # RECIPE
+from core.model import Ingredients, Recipes
+
+
+async def create_link(table: model, recipe_id: int, id: int) -> int:
+    field = ""
+    if table == model.RecipesIngredients:
+        field = "ingredient"
+    elif table == model.RecipesInstructions:
+        field = "instruction"
+    elif table == model.RecipesNutrition:
+        field = "nutrition"
+    elif table == model.RecipesPlanning:
+        field = "planning"
+    elif table == model.RecipesImages:
+        field = "image"
+    elif table == model.RecipesTags:
+        field = "tag"
+
+    obj_data = {
+        "recipe": recipe_id,
+        field: id
+    }
+    link = await table.create(**obj_data)
+    return link.id
+
+
 
 async def retrieve_recipe_by_id(recipe_id: int) -> Optional[schema.Recipe]:
     obj = await model.Recipes.get(recipe_id)
@@ -14,16 +39,18 @@ async def delete_recipe_by_id(recipe_id: int) -> None:
     await model.Recipes.delete.where(model.Recipes.id == recipe_id).gino.status()
 
 
-async def create_recipe_by_title(title: str) -> None:
+async def create_recipe_by_title(title: str) -> int:
     recipes = model.Recipes
     id = await get_recipe_id_by_title(title)
     if id is not None:
         print("Recipe with this title already exists")
-        return
+        return id
     obj_data = {
         "title": title
     }
-    await recipes.create(**obj_data)
+    print("RECIPE CREATED")
+    _recipe = await recipes.create(**obj_data)
+    return _recipe.id
 
 
 async def update_recipe_by_id(recipe_id: int, title: str) -> None:
@@ -56,14 +83,14 @@ async def delete_ingredient_by_id(ingredient_id: int) -> None:
 
 
 async def create_ingredient_by_raw_string(raw_string: str, name: str = None, quantity: str = None,
-                                          comment: str = None) -> None:
+                                          comment: str = None) -> int:
     ingredients = model.Ingredients
 
     id = await get_ingredient_id_by_raw_string(raw_string)
 
     if id is not None:
         print("Ingredient with this raw string already exists")
-        return
+        return id
 
     obj_data = {
         "name": name,
@@ -71,8 +98,9 @@ async def create_ingredient_by_raw_string(raw_string: str, name: str = None, qua
         "comment": comment,
         "raw_string": raw_string
     }
-
-    await ingredients.create(**obj_data)
+    print("INGREDIENT CREATED")
+    _ingredient = await ingredients.create(**obj_data)
+    return _ingredient.id
 
 
 async def update_ingredient_by_id(ingredient_id: int, raw_string: str, name: str = None, quantity: str = None,
@@ -111,20 +139,21 @@ async def delete_product_by_id(product_id: int) -> None:
     await model.Products.delete.where(model.Products.id == product_id).gino.status()
 
 
-async def create_product(name: str, size: str, image_url: str) -> None:
+async def create_product(name: str, size: str, image_url: str) -> int:
     products = model.Products
     id = await get_product_id_by_name(name)
     if id is not None:
         product = await products.get(id)
         if product.size == size and product.image_url == image_url:
             print("This product with this exact size and image url already exists")
-            return
+            return id
     obj_data = {
         "name": name,
         "size": size,
         "image_url": image_url
     }
-    await products.create(**obj_data)
+    _product = await products.create(**obj_data)
+    return _product.id
 
 
 async def update_product_by_id(product_id: int, name: str = None, size: str = None, image_url: str = None) -> None:
@@ -161,16 +190,17 @@ async def delete_tag_by_id(tag_id: int) -> None:
     await model.Tags.delete.where(model.Tags.id == tag_id).gino.status()
 
 
-async def create_tag_by_tag(tag: str) -> None:
+async def create_tag_by_tag(tag: str) -> int:
     tags = model.Tags
     id = await get_tag_id_by_tag(tag)
     if id:
         print("Tag with this name already exists")
-        return
+        return id
     obj_data = {
         "tag": tag
     }
-    await tags.create(**obj_data)
+    _tag = await tags.create(**obj_data)
+    return _tag.id
 
 
 async def update_tag_by_id(tag_id: int, tag: str) -> None:
@@ -204,16 +234,17 @@ async def delete_image_by_id(image_id: int) -> None:
     await model.Images.delete.where(model.Images.id == image_id).gino.status()
 
 
-async def create_image_by_image_url(image_url: str) -> None:
+async def create_image_by_image_url(image_url: str) -> int:
     images = model.Images
     id = await get_image_id_by_image_url(image_url)
     if id:
         print("Image with this image URL already exists")
-        return
+        return id
     obj_data = {
         "image": image_url
     }
-    await images.create(**obj_data)
+    _image = await images.create(**obj_data)
+    return _image.id
 
 
 async def update_image_by_id(image_id: int, image_url: str) -> None:
@@ -247,16 +278,17 @@ async def delete_instruction_by_id(instruction_id: int) -> None:
     await model.Instructions.delete.where(model.Instructions.id == instruction_id).gino.status()
 
 
-async def create_instruction_by_instruction(instruction: str) -> None:
+async def create_instruction_by_instruction(instruction: str) -> int:
     instructions = model.Instructions
     id = await get_instruction_by_instruction(instruction)
     if id:
         print("Instruction with this content already exists")
-        return
+        return id
     obj_data = {
         "instruction": instruction
     }
-    await instructions.create(**obj_data)
+    _instruction = await instructions.create(**obj_data)
+    return _instruction.id
 
 
 async def update_instruction_by_id(instruction_id: int, instructions: str) -> None:
@@ -289,7 +321,7 @@ async def delete_planning_by_id(planning_id: int) -> None:
     await model.Plan.delete.where(model.Plan.id == planning_id).gino.status()
 
 
-async def create_planning_by_planning(preptime: str, cooktime: str, totaltime: str, serves: str) -> None:
+async def create_planning_by_planning(preptime: str, cooktime: str, totaltime: str, serves: str) -> int:
     planning = model.Plan
     obj_data = {
         "prep_time": preptime,
@@ -301,8 +333,9 @@ async def create_planning_by_planning(preptime: str, cooktime: str, totaltime: s
         planning.total_time == totaltime).where(planning.serves == serves).gino.scalar()
     if id is not None:
         print("This planning with this exact time estimations already exists")
-        return
-    await planning.create(**obj_data)
+        return id
+    _planning = await planning.create(**obj_data)
+    return _planning.id
 
 
 async def update_planning_by_id(planning_id: int, prep_time: str, cook_time: str, total_time: str, serves: str) -> None:
@@ -338,7 +371,7 @@ async def delete_nutrition_by_id(nutrition_id: int) -> None:
 
 
 async def create_nutrition_by_nutrition(energy: str, fat: str, saturated_fat: str, carbohydrate: str, sugars: str,
-                                        protein: str, salt: str, fibre: str) -> None:
+                                        protein: str, salt: str, fibre: str) -> int:
     nutrition = model.Nutrition
     obj_data = {
         "energy": energy,
@@ -356,8 +389,9 @@ async def create_nutrition_by_nutrition(energy: str, fat: str, saturated_fat: st
         nutrition.salt == salt).where(nutrition.fibre == fibre).gino.scalar()
     if id is not None:
         print("This nutrition with this exact time estimations already exists")
-        return
-    await nutrition.create(**obj_data)
+        return id
+    _nutrition = await nutrition.create(**obj_data)
+    return _nutrition.id
 
 
 async def update_nutrition_by_id(nutrition_id: int, energy: str, fat: str, saturated_fat: str, carbohydrate: str,

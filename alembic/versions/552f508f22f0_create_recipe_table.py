@@ -76,33 +76,38 @@ def upgrade():
 
     op.create_table('recipes_ingredients',
                     sa.Column('id', INTEGER, autoincrement=True, primary_key=True),
-                    sa.Column('recipe', INTEGER, ForeignKey('ingredients.id', ondelete="CASCADE")),
-                    sa.Column('ingredient', INTEGER, ForeignKey('recipes.id', ondelete="CASCADE")))
+                    sa.Column('recipe', INTEGER, ForeignKey('recipes.id', ondelete="CASCADE")),
+                    sa.Column('ingredient', INTEGER, ForeignKey('ingredients.id', ondelete="CASCADE")))
 
     op.create_table('ingredients_products',
                     sa.Column('id', INTEGER, autoincrement=True, primary_key=True),
-                    sa.Column('product', INTEGER, ForeignKey('ingredients.id', ondelete="CASCADE")),
-                    sa.Column('ingredient', INTEGER, ForeignKey('products.id', ondelete="CASCADE")))
+                    sa.Column('product', INTEGER, ForeignKey('products.id', ondelete="CASCADE")),
+                    sa.Column('ingredient', INTEGER, ForeignKey('ingredients.id', ondelete="CASCADE")))
+
+    op.create_table('recipes_instructions',
+                    sa.Column('id', INTEGER, autoincrement=True, primary_key=True),
+                    sa.Column('recipe', INTEGER, ForeignKey('recipes.id', ondelete="CASCADE")),
+                    sa.Column('instruction', INTEGER, ForeignKey('instructions.id', ondelete="CASCADE")))
 
     op.create_table('recipes_tags',
                     sa.Column('id', INTEGER, autoincrement=True, primary_key=True),
-                    sa.Column('recipe', INTEGER, ForeignKey('tags.id', ondelete="CASCADE")),
-                    sa.Column('tag', INTEGER, ForeignKey('recipes.id', ondelete="CASCADE")))
+                    sa.Column('recipe', INTEGER, ForeignKey('recipes.id', ondelete="CASCADE")),
+                    sa.Column('tag', INTEGER, ForeignKey('tags.id', ondelete="CASCADE")))
 
     op.create_table('recipes_images',
                     sa.Column('id', INTEGER, autoincrement=True, primary_key=True),
-                    sa.Column('recipe', INTEGER, ForeignKey('images.id', ondelete="CASCADE")),
-                    sa.Column('image', INTEGER, ForeignKey('recipes.id', ondelete="CASCADE")))
+                    sa.Column('recipe', INTEGER, ForeignKey('recipes.id', ondelete="CASCADE")),
+                    sa.Column('image', INTEGER, ForeignKey('images.id', ondelete="CASCADE")))
 
     op.create_table('recipes_planning',
                     sa.Column('id', INTEGER, autoincrement=True, primary_key=True),
-                    sa.Column('recipe', INTEGER, ForeignKey('planning.id', ondelete="CASCADE")),
-                    sa.Column('planning', INTEGER, ForeignKey('recipes.id', ondelete="CASCADE")))
+                    sa.Column('recipe', INTEGER, ForeignKey('recipes.id', ondelete="CASCADE")),
+                    sa.Column('planning', INTEGER, ForeignKey('planning.id', ondelete="CASCADE")))
 
     op.create_table('recipes_nutrition',
                     sa.Column('id', INTEGER, autoincrement=True, primary_key=True),
-                    sa.Column('recipe', INTEGER, ForeignKey('nutrition.id', ondelete="CASCADE")),
-                    sa.Column('nutrition', INTEGER, ForeignKey('recipes.id', ondelete="CASCADE")))
+                    sa.Column('recipe', INTEGER, ForeignKey('recipes.id', ondelete="CASCADE")),
+                    sa.Column('nutrition', INTEGER, ForeignKey('nutrition.id', ondelete="CASCADE")))
 
 
 def downgrade():
