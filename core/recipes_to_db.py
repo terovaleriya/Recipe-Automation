@@ -10,7 +10,6 @@ from recipe_parser.recipe import Recipe
 
 
 async def main():
-    
     await db.set_bind("postgresql://racine@localhost/stepa")
     os.chdir("../recipe_parser/")
     json_folder = "recipes_json/"

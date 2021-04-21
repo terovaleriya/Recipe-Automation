@@ -77,7 +77,8 @@ class Nutrition:
 
     def __str__(self) -> str:
         return str(self.nutrition_id) + ", " + str(self.energy) + ", " + \
-               str(self.fat) + ", " + str(self.saturated_fat) + ", " + str(self.carbohydrate) + ", " + str(self.sugars) + ", " + \
+               str(self.fat) + ", " + str(self.saturated_fat) + ", " + str(self.carbohydrate) + ", " + str(
+            self.sugars) + ", " + \
                str(self.protein) + ", " + str(self.salt) + ", " + str(self.fibre)
 
 
