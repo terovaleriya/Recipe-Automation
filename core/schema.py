@@ -17,8 +17,8 @@ class Ingredient:
         self.comment = comment
 
     def __str__(self) -> str:
-        return str(self.ingredient_id) + ", " + self.name + ", " + \
-               self.quantity + ", " + self.comment + ", " + self.raw_string
+        return str(self.ingredient_id) + ", " + str(self.name) + ", " + \
+               str(self.quantity) + ", " + str(self.comment) + ", " + self.raw_string
 
 
 class Instruction:
@@ -57,8 +57,8 @@ class Plan:
         self.serves = serves
 
     def __str__(self) -> str:
-        return str(self.planning_id) + ", " + self.prep_time + ", " + \
-               self.cook_time + ", " + self.total_time + ", " + self.serves
+        return str(self.planning_id) + ", " + str(self.prep_time) + ", " + \
+               str(self.cook_time) + ", " + str(self.total_time) + ", " + str(self.serves)
 
 
 class Nutrition:
@@ -76,9 +76,9 @@ class Nutrition:
         self.fibre = fibre
 
     def __str__(self) -> str:
-        return str(self.nutrition_id) + ", " + self.energy + ", " + \
-               self.fat + ", " + self.saturated_fat + ", " + self.carbohydrate + ", " + self.sugars + ", " + \
-               self.protein + ", " + self.salt + ", " + self.fibre
+        return str(self.nutrition_id) + ", " + str(self.energy) + ", " + \
+               str(self.fat) + ", " + str(self.saturated_fat) + ", " + str(self.carbohydrate) + ", " + str(self.sugars) + ", " + \
+               str(self.protein) + ", " + str(self.salt) + ", " + str(self.fibre)
 
 
 class Product:
