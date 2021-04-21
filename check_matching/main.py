@@ -15,8 +15,10 @@ def instructions():
     print()
 
 
+matching_filename = '../database_phantom/db_matching_v2.txt'
+
 matching_db = Database()
-matching_db.load_from_file('../database_phantom/db_matching.txt')
+matching_db.load_from_file(matching_filename)
 
 ingredients_db = Database()
 ingredients_db.load_from_file('../database_phantom/db_ingredients.txt')
@@ -62,7 +64,7 @@ for match in matching_to_check:
             matching_db.insert_where_col_equals({
                 'checked': True,
             }, 'ingredientId', ingred_id)
-            matching_db.save_into_file('../database_phantom/db_matching.txt')
+            matching_db.save_into_file(matching_filename)
             break
         else:
             items = command.split()
@@ -72,7 +74,7 @@ for match in matching_to_check:
                     'checked': True,
                     'answer': json.dumps([prod_ids[p - 1] for p in pos]),
                 }, 'ingredientId', ingred_id)
-                matching_db.save_into_file('../database_phantom/db_matching.txt')
+                matching_db.save_into_file(matching_filename)
                 print()
                 break
             else:

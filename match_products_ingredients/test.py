@@ -59,4 +59,4 @@ for ingred in products:
     all_items.extend(items)
 
 count = Counter(all_items)
-print(*sorted(count.items(), key=lambda x: x[1], reverse=True)[:100], sep='\n')
+print(*sorted(count.items(), key=lambda x: x[1], reverse=True)[:1000], sep='\n')

@@ -1,10 +1,19 @@
 import json
 from database_phantom.database import Database
+from filter_words import filter_words
+
+
+# def score(ingredient_name, product_name):
+#     ingredient_set = set(ingredient_name.lower().split())
+#     product_set = set(product_name.lower().split())
+#     return len(ingredient_set & product_set) / len(ingredient_set | product_set)
 
 
 def score(ingredient_name, product_name):
     ingredient_set = set(ingredient_name.lower().split())
+    ingredient_set = filter_words(ingredient_set)
     product_set = set(product_name.lower().split())
+    product_set = filter_words(product_set)
     return len(ingredient_set & product_set) / len(ingredient_set | product_set)
 
 
@@ -63,4 +72,4 @@ for ingred in ingredients:
     #     'answer': None,
     # }, 'ingredientId', ingred['id'])
 
-matching_db.save_into_file('../database_phantom/db_matching.txt')
+matching_db.save_into_file('../database_phantom/db_matching_v2.txt')
