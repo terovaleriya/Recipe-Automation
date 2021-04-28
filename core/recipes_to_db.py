@@ -13,10 +13,9 @@ from recipe_parser.recipe import Recipe
 async def main():
     credentials = get_credentials()
     await db.set_bind(credentials)
-    os.chdir("../recipe_parser/")
-    json_folder = "recipes_json/"
+    json_folder = "../recipe_parser/recipes_json/"
     for f in os.listdir(json_folder):
-        f = "recipes_json/" + f
+        f = json_folder + f
         with open(f, "r") as file:
             json_str = file.readline()
             obj = json.loads(json_str)

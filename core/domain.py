@@ -130,7 +130,7 @@ async def update_product_by_id(product_id: int, name: str = None, size: str = No
     except AttributeError:
         logging.warning("Product with id %s doesn't exist", str(product_id))
     except asyncpg.exceptions.UniqueViolationError:
-        logging.warning(
+        logging.error(
             "Product with [name '%s', size '%s', image_url '%s'] already exists. Update by id %s is not completed",
             name,
             str(size), str(image_url), product_id)
@@ -568,7 +568,7 @@ async def update_nutrition_by_id(nutrition_id: int, energy: str = None, fat: str
     except asyncpg.exceptions.UniqueViolationError:
         id = await get_nutrition_id_by_parameters(energy, fat, saturated_fat, carbohydrate,
                                                   sugars, protein, salt, fibre)
-        logging.warning(
+        logging.error(
             "This nutrition with this exact nutrient information already exists. Update by id %s is not completed",
             nutrition_id)
         return id
