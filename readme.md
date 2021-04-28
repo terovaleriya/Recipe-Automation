@@ -21,7 +21,7 @@
 * `def load_matched_product(ingredient_id: int, product_id: int)`. Для проверенных матчей
 
 
-##Важное
+## Важное
 
 * Все функции асинхронные, поэтому перед каждой нужно писать `await`, то есть `id = await retrieve_recipe_by_title("lala")`. Если возникает ошибка или подсказка, где написано что-то про `Coroutine`, то ты точно забыл где-то `await`
 
