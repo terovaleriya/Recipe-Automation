@@ -15,6 +15,12 @@ class RecipesIngredients(db.Model):
     ingredient = Column(Integer, ForeignKey('ingredients.id', ondelete="CASCADE"), nullable=False)
 
 
+class ProductStringIdsMatching(db.Model):
+    __tablename__ = 'product_string_ids_matching'
+    id = Column('id', Integer, ForeignKey("recipes.id"), primary_key=True),
+    string_id = Column('string_id', String, nullable=False)
+
+
 class RecipesTags(db.Model):
     __tablename__ = 'recipes_tags'
     id = Column(Integer, primary_key=True, nullable=False)

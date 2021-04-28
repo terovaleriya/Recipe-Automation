@@ -37,7 +37,7 @@ def upgrade():
                     sa.Column('id', INTEGER, primary_key=True),
                     sa.Column('name', String, nullable=False),
                     sa.Column('size', String),
-                    sa.Column('image_url', String))
+                    sa.Column('image_url', String), UniqueConstraint('name', 'size', 'image_url'))
 
     op.create_table('tags',
                     sa.Column('id', INTEGER, primary_key=True),
@@ -63,48 +63,62 @@ def upgrade():
                     sa.Column('sugars', String, nullable=True),
                     sa.Column('protein', String, nullable=True),
                     sa.Column('salt', String, nullable=True),
-                    sa.Column('fibre', String, nullable=True))
-
-    op.create_table('recipes_ingredients',
-                    sa.Column('id', INTEGER, primary_key=True),
-                    sa.Column('recipe', INTEGER, ForeignKey('recipes.id', ondelete="CASCADE"), nullable=False),
-                    sa.Column('ingredient', INTEGER, ForeignKey('ingredients.id', ondelete="CASCADE"), nullable=False))
-
-    op.create_table('matched_ingredients_products',
-                    sa.Column('id', INTEGER, primary_key=True),
-                    sa.Column('product', INTEGER, ForeignKey('products.id', ondelete="CASCADE"), nullable=False),
-                    sa.Column('ingredient', INTEGER, ForeignKey('ingredients.id', ondelete="CASCADE"), nullable=False))
+                    sa.Column('fibre', String, nullable=True), UniqueConstraint('energy', 'fat', 'saturated_fat', 'carbohydrate', 'sugars', 'protein', 'salt', 'fibre'))
 
     op.create_table('recipes_instructions',
                     sa.Column('id', INTEGER, primary_key=True),
                     sa.Column('recipe', INTEGER, ForeignKey('recipes.id', ondelete="CASCADE"), nullable=False),
                     sa.Column('instruction', INTEGER,
-                              ForeignKey('instructions.id', ondelete="CASCADE"), nullable=False))
+                              ForeignKey('instructions.id', ondelete="CASCADE"), nullable=False),
+                    UniqueConstraint('recipe', 'instruction'))
 
     op.create_table('recipes_tags',
                     sa.Column('id', INTEGER, primary_key=True),
                     sa.Column('recipe', INTEGER, ForeignKey('recipes.id', ondelete="CASCADE"), nullable=False),
-                    sa.Column('tag', INTEGER, ForeignKey('tags.id', ondelete="CASCADE"), nullable=False))
+                    sa.Column('tag', INTEGER, ForeignKey('tags.id', ondelete="CASCADE"), nullable=False),
+                    UniqueConstraint('recipe', 'tag'))
 
     op.create_table('recipes_images',
                     sa.Column('id', INTEGER, primary_key=True),
                     sa.Column('recipe', INTEGER, ForeignKey('recipes.id', ondelete="CASCADE"), nullable=False),
-                    sa.Column('image', INTEGER, ForeignKey('images.id', ondelete="CASCADE"), nullable=False))
+                    sa.Column('image', INTEGER, ForeignKey('images.id', ondelete="CASCADE"), nullable=False),
+                    UniqueConstraint('recipe', 'image'))
+
 
     op.create_table('recipes_planning',
                     sa.Column('id', INTEGER, primary_key=True),
                     sa.Column('recipe', INTEGER, ForeignKey('recipes.id', ondelete="CASCADE"), nullable=False),
-                    sa.Column('planning', INTEGER, ForeignKey('planning.id', ondelete="CASCADE"), nullable=False))
+                    sa.Column('planning', INTEGER, ForeignKey('planning.id', ondelete="CASCADE"), nullable=False),
+                    UniqueConstraint('recipe', 'planning'))
+
+    op.create_table('recipes_ingredients',
+                    sa.Column('id', INTEGER, autoincrement=True, primary_key=True),
+                    sa.Column('recipe', INTEGER, ForeignKey('recipes.id', ondelete="CASCADE"), nullable=False),
+                    sa.Column('ingredient', INTEGER, ForeignKey('ingredients.id', ondelete="CASCADE"), nullable=False),
+                    UniqueConstraint('recipe', 'ingredient'))
 
     op.create_table('recipes_nutrition',
                     sa.Column('id', INTEGER, primary_key=True),
                     sa.Column('recipe', INTEGER, ForeignKey('recipes.id', ondelete="CASCADE"), nullable=False),
-                    sa.Column('nutrition', INTEGER, ForeignKey('nutrition.id', ondelete="CASCADE"), nullable=False))
+                    sa.Column('nutrition', INTEGER, ForeignKey('nutrition.id', ondelete="CASCADE"), nullable=False),
+                    UniqueConstraint('recipe', 'nutrition'))
 
     op.create_table('unchecked_ingredients_products',
                     sa.Column('id', INTEGER, primary_key=True),
                     sa.Column('product', INTEGER, ForeignKey('products.id', ondelete="CASCADE"), nullable=False),
-                    sa.Column('ingredient', INTEGER, ForeignKey('ingredients.id', ondelete="CASCADE"), nullable=False))
+                    sa.Column('ingredient', INTEGER, ForeignKey('ingredients.id', ondelete="CASCADE"), nullable=False),
+                    UniqueConstraint('product', 'ingredient'))
+
+    op.create_table('matched_ingredients_products',
+                    sa.Column('id', INTEGER, primary_key=True),
+                    sa.Column('product', INTEGER, ForeignKey('products.id', ondelete="CASCADE"), nullable=False),
+                    sa.Column('ingredient', INTEGER, ForeignKey('ingredients.id', ondelete="CASCADE"), nullable=False),
+                    UniqueConstraint('product', 'ingredient'))
+
+    op.create_table('product_string_ids_matching',
+                    sa.Column('id', INTEGER, ForeignKey("recipes.id"), primary_key=True),
+                    sa.Column('string_id', String, nullable=False),
+                    UniqueConstraint('id', 'string_id'))
 
 
 def downgrade():
