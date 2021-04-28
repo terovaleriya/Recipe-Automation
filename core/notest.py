@@ -246,7 +246,7 @@ async def main():
             await recipe_to_db(recipe)
         i += 1
 
-    # await delete_recipe_by_id(4)
+    await delete_recipe_by_id(4)
     # await delete_recipe_by_id(6)
 
 

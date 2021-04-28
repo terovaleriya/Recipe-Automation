@@ -2,7 +2,7 @@ from typing import List
 
 from gino import Gino
 from sqlalchemy import String, ForeignKey, Column, Integer, UniqueConstraint
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, backref
 from core import schema
 
 db: Gino = Gino()
@@ -79,7 +79,7 @@ class Recipes(db.Model):
     tags = relationship("Tags", secondary="RecipesTags", backref="recipes")
     images = relationship("Image", secondary="RecipesImages", backref="recipes")
     planning = relationship("Planning", secondary="RecipesPlanning", backref="recipes")
-    nutrition = relationship("Nutrition", secondary="RecipesNutrition", backref="recipes")
+    nutrition = relationship("Nutrition", secondary="RecipesNutrition", backref=backref("nutrition", cascade="all, delete"))
     instructions = relationship("Instruction", secondary="RecipesInstructions", backref="recipes")
 
     def as_schema(self) -> schema.Recipe:

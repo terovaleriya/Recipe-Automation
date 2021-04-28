@@ -10,6 +10,7 @@ import sqlalchemy as sa
 from sqlalchemy import INTEGER, String, ForeignKey, UniqueConstraint
 
 # revision identifiers, used by Alembic.
+from sqlalchemy.orm import backref, relationship
 
 revision = '552f508f22f0'
 down_revision = None
