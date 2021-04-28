@@ -22,7 +22,7 @@ def get_tags(recipe: BeautifulSoup) -> List[Tag]:
         return all_tags
 
 
-def get_planning(recipe: BeautifulSoup) -> Planing:
+def get_planning(recipe: BeautifulSoup) -> Planning:
     prep_time = recipe.find('span', {'itemprop': "prepTime"})
     prep_time = prep_time["content"].strip() if prep_time else None
     cook_time = recipe.find('span', {'itemprop': "cookTime"})
@@ -32,7 +32,7 @@ def get_planning(recipe: BeautifulSoup) -> Planing:
     serves = recipe.find('span', {'itemprop': "recipeYield"})
     serves = serves.text.strip() if serves else None
 
-    return Planing(prep_time, cook_time, total_time, serves)
+    return Planning(prep_time, cook_time, total_time, serves)
 
 
 # getting method and ingredients strategy is the same
