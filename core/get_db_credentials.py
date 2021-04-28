@@ -8,9 +8,8 @@ def get_full_path(*path):
     return join(MAIN_DIRECTORY, *path)
 
 
-def get_db_credentials(config: str, test: bool = False) -> str:
-    if test:
-        return config
+def get_db_credentials(config: str) -> str:
+
     with open(config) as file:
         config_file = json.load(file)
 
@@ -25,4 +24,4 @@ def get_db_credentials(config: str, test: bool = False) -> str:
 
 def get_credentials():
     return get_db_credentials(get_full_path("config.json"))
-# credentials = get_db_credentials("postgresql://racine@localhost/stepa", True)
+    # return "postgresql://racine@localhost/stepa"
