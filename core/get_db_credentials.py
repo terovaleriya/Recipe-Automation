@@ -16,5 +16,4 @@ def get_db_credentials(config: str, test: bool = False) -> str:
     return res
 
 
-# credentials = get_db_credentials("core/config.json")
-credentials = get_db_credentials("postgresql://racine@localhost/stepa", True)
+credentials = get_db_credentials("core/config.json")
