@@ -3,7 +3,7 @@ import json
 
 import os
 
-from core.get_db_credentials import credentials
+from core.get_db_credentials import get_credentials
 from core.loaders import recipe_to_db
 from core.model import db
 
@@ -11,6 +11,7 @@ from recipe_parser.recipe import Recipe
 
 
 async def main():
+    credentials = get_credentials()
     await db.set_bind(credentials)
     os.chdir("../recipe_parser/")
     json_folder = "recipes_json/"

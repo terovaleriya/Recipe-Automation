@@ -19,15 +19,13 @@ depends_on = None
 
 def upgrade():
     op.create_table('recipes', sa.Column('id', INTEGER, primary_key=True),
-                    sa.Column('title', String, nullable=False, unique=True)
-                    )
+                    sa.Column('title', String, nullable=False, unique=True))
 
     op.create_table('ingredients',
                     sa.Column('id', INTEGER, primary_key=True),
                     sa.Column('raw_string', String, nullable=False, unique=True),
                     sa.Column('name', String), sa.Column('quantity', String),
-                    sa.Column('comment', String)
-                    )
+                    sa.Column('comment', String))
 
     op.create_table('instructions',
                     sa.Column('id', INTEGER, primary_key=True),

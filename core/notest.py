@@ -3,9 +3,9 @@ import json
 import os
 
 from core.domain import *
+from core.get_db_credentials import get_credentials
 from core.loaders import recipe_to_db
 from core.model import db
-from core.get_db_credentials import credentials
 from recipe_parser.recipe import Recipe
 
 
@@ -219,8 +219,8 @@ async def pruduct_test(delete: bool = True):
     assert (await retrieve_product_by_id(id) is None)
 
 
-
 async def main():
+    credentials = get_credentials()
     await db.set_bind(credentials)
 
     await recipe_test()
@@ -233,13 +233,12 @@ async def main():
     await pruduct_test()
     await db.set_bind(credentials)
 
-    os.chdir("../recipe_parser/")
-    json_folder = "recipes_json/"
+    json_folder = "../recipe_parser/recipes_json/"
     i = 0
     for f in os.listdir(json_folder):
         if i == 2:
             break
-        f = "recipes_json/" + f
+        f = json_folder + f
         with open(f, "r") as file:
             json_str = file.readline()
             obj = json.loads(json_str)
@@ -247,7 +246,7 @@ async def main():
             await recipe_to_db(recipe)
         i += 1
 
-    await delete_recipe_by_id(4)
+    # await delete_recipe_by_id(4)
     # await delete_recipe_by_id(6)
 
 

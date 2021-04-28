@@ -1,4 +1,11 @@
 import json
+from os.path import dirname, join
+
+MAIN_DIRECTORY = dirname(dirname(__file__))
+
+
+def get_full_path(*path):
+    return join(MAIN_DIRECTORY, *path)
 
 
 def get_db_credentials(config: str, test: bool = False) -> str:
@@ -16,4 +23,6 @@ def get_db_credentials(config: str, test: bool = False) -> str:
     return res
 
 
-credentials = get_db_credentials("core/config.json")
+def get_credentials():
+    return get_db_credentials(get_full_path("config.json"))
+# credentials = get_db_credentials("postgresql://racine@localhost/stepa", True)
