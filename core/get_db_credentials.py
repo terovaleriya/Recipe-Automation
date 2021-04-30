@@ -23,5 +23,5 @@ def get_db_credentials(config: str) -> str:
 
 
 def get_credentials():
-    # return get_db_credentials(get_full_path("config.json"))
-    return "postgresql://racine@localhost/stepa"
+    return get_db_credentials(get_full_path("config.json"))
+    # return "postgresql://racine@localhost/stepa"
