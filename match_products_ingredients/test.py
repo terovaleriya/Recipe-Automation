@@ -1,4 +1,3 @@
-import json
 from database_phantom.database import Database
 from collections import Counter
 
@@ -32,6 +31,7 @@ def match_ingredient_and_products(ingredient_name, all_products):
         result.append((cur_score, product['id']))
     result.sort(key=lambda x: x[0], reverse=True)
     return list(map(lambda x: x[1], result[:5]))
+
 
 # all_products = json.load(open('../download_products/all_products.txt'))
 #

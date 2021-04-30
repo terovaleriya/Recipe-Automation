@@ -1,6 +1,7 @@
 # TODO переписать получше
 # TODO улучшить грамматику
 
+
 class Grammar:
 
     @staticmethod
@@ -71,9 +72,9 @@ class Grammar:
                 if len(rule) == 1:
                     for item in self.parse_text(text, rule[0]):
                         if rule[0][1] in ['terminal', 'default']:
-                            result.append([{rule[0][1] : item}])
+                            result.append([{rule[0][1]: item}])
                         else:
-                            result.append([{rule[0][0] : item}])
+                            result.append([{rule[0][0]: item}])
                 elif len(rule) == 2:
                     for i in range(1, len(text)):
                         if text[i] == ' ':
@@ -82,7 +83,7 @@ class Grammar:
                         right = self.parse_text(text[i:], rule[1])
                         for item1 in left:
                             for item2 in right:
-                                result.append([{rule[0][0] : item1}, {rule[1][0] : item2}])
+                                result.append([{rule[0][0]: item1}, {rule[1][0]: item2}])
         elif node[1] == 'default':
             if node[0](text):
                 result.append(text)

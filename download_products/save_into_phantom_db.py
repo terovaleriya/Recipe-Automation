@@ -24,7 +24,6 @@ products_db = Database()
 products_db.load_from_file('../database_phantom/db_products.txt')
 
 for item in all_products:
-
     products_db.insert_where_col_equals({
         'image': item['thumbnail'] if 'thumbnail' in item else None,
     }, 'id', item['id'])

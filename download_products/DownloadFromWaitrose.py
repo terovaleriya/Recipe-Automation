@@ -23,12 +23,12 @@ def get_all_products(category):
         data = {
             "customerSearchRequest": {
                 "queryParams": {
-                    "size":128,
-                    "category":category,
-                    "filterTags":[],
-                    "sortBy":"MOST_POPULAR",
-                    "orderId":"0",
-                    "start":start,
+                    "size": 128,
+                    "category": category,
+                    "filterTags": [],
+                    "sortBy": "MOST_POPULAR",
+                    "orderId": "0",
+                    "start": start,
                 }
             }
         }

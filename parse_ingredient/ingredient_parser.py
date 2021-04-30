@@ -1,4 +1,4 @@
-from grammar import Grammar
+from parse_ingredient.grammar import Grammar
 
 
 def preprocess(raw_ingredient):
@@ -26,7 +26,7 @@ def parse_ingredient(raw_ingredient, grammar):
 
     comma_pos = raw_ingredient.find(',')
     if comma_pos != -1:
-        comment = raw_ingredient[comma_pos+1:].strip()
+        comment = raw_ingredient[comma_pos + 1:].strip()
         raw_ingredient = raw_ingredient[:comma_pos].strip()
         ingredient = raw_ingredient
 
