@@ -158,11 +158,13 @@ class Products(db.Model):
     id = Column(Integer, primary_key=True)
     name = Column(String, nullable=False)
     size = Column(String)
+    price = Column(String)
     image_url = Column(String)
     UniqueConstraint('name', 'size', 'image_url')
 
     def as_schema(self) -> schema.Product:
-        return schema.Product(product_id=self.id, name=self.name, size=self.size, image_url=self.image_url)
+        return schema.Product(product_id=self.id, name=self.name, size=self.size, price=self.price,
+                              image_url=self.image_url)
 
 
 class Instructions(db.Model):

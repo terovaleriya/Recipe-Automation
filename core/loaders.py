@@ -65,12 +65,14 @@ async def load_product_to_db():
         all_products = json.loads(json_str)
 
     for item in all_products:
-        image_url = item.get('thumbnail', None)
         str_id = item.get('id')
+
         name = item.get('name')
         size = item.get('size', None)
+        price = item.get('price', None)
+        image_url = item.get('thumbnail', None)
 
-        product_id = await create_product(name, size, image_url)
+        product_id = await create_product(name, size, price, image_url)
 
         await create_link_product_string_ids_matching(product_id, str_id)
 

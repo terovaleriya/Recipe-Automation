@@ -99,12 +99,13 @@ async def delete_product_by_id(product_id: int) -> None:
 
 
 # OK
-async def create_product(name: str, size: str = None, image_url: str = None) -> int:
+async def create_product(name: str, size: str = None, price: str = None, image_url: str = None) -> int:
     products = model.Products
     try:
         obj_data = {
             "name": name,
             "size": size,
+            "price": price,
             "image_url": image_url
         }
         product = await products.create(**obj_data)
@@ -112,12 +113,14 @@ async def create_product(name: str, size: str = None, image_url: str = None) -> 
 
     except asyncpg.exceptions.UniqueViolationError:
         logging.info(
-            "Product with [name '%s', size '%s', image_url '%s'] already exists", name, str(size), str(image_url))
-        return await get_product_id_by_parameters(name, size, image_url)
+            "Product with [name '%s', size '%s', price %s, image_url '%s'] already exists", name, str(size), str(price),
+            str(image_url))
+        return await get_product_id_by_parameters(name, size, price, image_url)
 
 
 # OK
-async def update_product_by_id(product_id: int, name: str = None, size: str = None, image_url: str = None) -> Optional[
+async def update_product_by_id(product_id: int, name: str = None, size: str = None, price: str = None,
+                               image_url: str = None) -> Optional[
     int]:
     products = model.Products
 
@@ -125,10 +128,12 @@ async def update_product_by_id(product_id: int, name: str = None, size: str = No
         obj = await products.get(product_id)
         name = name if (name is not None) else obj.name
         size = size if (size is not None) else obj.size
+        price = price if (price is not None) else obj.price
         image_url = image_url if (image_url is not None) else obj.image_url
         obj_data = {
             "name": name,
             "size": size,
+            "price": price,
             "image_url": image_url
         }
         await obj.update(**obj_data).apply()
@@ -136,17 +141,18 @@ async def update_product_by_id(product_id: int, name: str = None, size: str = No
         logging.warning("Product with id %s doesn't exist", str(product_id))
     except asyncpg.exceptions.UniqueViolationError:
         logging.error(
-            "Product with [name '%s', size '%s', image_url '%s'] already exists. Update by id %s is not completed",
+            "Product with [name '%s', size '%s', price '%s', image_url '%s'] already exists. "
+            "Update by id %s is not completed",
             name,
-            str(size), str(image_url), product_id)
+            str(size), str(price), str(image_url), product_id)
         return await get_product_id_by_parameters(name, size, image_url)
 
 
 # OK
-async def get_product_id_by_parameters(name: str, size: str = None, image_url: str = None) -> int:
+async def get_product_id_by_parameters(name: str, size: str = None, price: str = None, image_url: str = None) -> int:
     products = model.Products
-    return await products.query.where(products.name == name).where(products.size == size).where(
-        products.image_url == image_url).gino.scalar()
+    return await products.query.where(products.name == name).where(products.size == size). \
+        where(products.price == price).where(products.image_url == image_url).gino.scalar()
 
 
 # RECIPE

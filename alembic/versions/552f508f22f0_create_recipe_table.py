@@ -36,7 +36,9 @@ def upgrade():
                     sa.Column('id', INTEGER, primary_key=True),
                     sa.Column('name', String, nullable=False),
                     sa.Column('size', String),
-                    sa.Column('image_url', String), UniqueConstraint('name', 'size', 'image_url'))
+                    sa.Column('price', String),
+                    sa.Column('image_url', String),
+                    UniqueConstraint('name', 'size', 'price', 'image_url'))
 
     op.create_table('tags',
                     sa.Column('id', INTEGER, primary_key=True),

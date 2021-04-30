@@ -83,11 +83,12 @@ class Nutrition:
 
 
 class Product:
-    def __init__(self, product_id: int, name: str, size: str, image_url: str):
+    def __init__(self, product_id: int, name: str, size: str, price: str, image_url: str):
         self.product_id = product_id
         self.name = name
         self.size = size
+        self.price = price
         self.image_url = image_url
 
     def __str__(self) -> str:
-        return str(self.product_id) + ", " + self.name + ", " + self.size + ", " + self.image_url
+        return str(self.product_id) + ", " + self.name + ", " + self.size + ", " + self.price + ", " + self.image_url
