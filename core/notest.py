@@ -247,7 +247,7 @@ async def main():
         i += 1
 
     await delete_recipe_by_id(4)
-    # await delete_recipe_by_id(6)
+    await delete_recipe_by_id(6)
 
 
 if __name__ == '__main__':

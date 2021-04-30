@@ -17,7 +17,7 @@ class RecipesIngredients(db.Model):
 
 class ProductStringIdsMatching(db.Model):
     __tablename__ = 'product_string_ids_matching'
-    id = Column('id', Integer, ForeignKey("recipes.id"), primary_key=True),
+    id = Column(Integer, ForeignKey("products.id"), primary_key=True, nullable=False)
     string_id = Column('string_id', String, nullable=False)
 
 
@@ -57,14 +57,14 @@ class RecipesNutrition(db.Model):
 
 
 class MatchedIngredientsProducts(db.Model):
-    __tablename__ = 'ingredients_products'
+    __tablename__ = 'matched_ingredients_products'
     id = Column(Integer, primary_key=True, nullable=False)
     product = Column(Integer, ForeignKey('ingredients.id'), nullable=False)
     ingredient = Column(Integer, ForeignKey('products.id'), nullable=False)
 
 
 class UncheckedIngredientsProducts(db.Model):
-    __tablename__ = 'unchecked_products_ingredients'
+    __tablename__ = 'unchecked_ingredients_products'
     id = Column(Integer, primary_key=True, nullable=False)
     product = Column(Integer, ForeignKey('products.id'), nullable=False)
     ingredient = Column(Integer, ForeignKey('ingredients.id'), nullable=False)
@@ -79,7 +79,8 @@ class Recipes(db.Model):
     tags = relationship("Tags", secondary="RecipesTags", backref="recipes")
     images = relationship("Image", secondary="RecipesImages", backref="recipes")
     planning = relationship("Planning", secondary="RecipesPlanning", backref="recipes")
-    nutrition = relationship("Nutrition", secondary="RecipesNutrition", backref=backref("nutrition", cascade="all, delete"))
+    nutrition = relationship("Nutrition", secondary="RecipesNutrition",
+                             backref=backref("nutrition", cascade="all, delete"))
     instructions = relationship("Instruction", secondary="RecipesInstructions", backref="recipes")
 
     def as_schema(self) -> schema.Recipe:

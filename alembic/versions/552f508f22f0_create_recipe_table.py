@@ -62,7 +62,9 @@ def upgrade():
                     sa.Column('sugars', String, nullable=True),
                     sa.Column('protein', String, nullable=True),
                     sa.Column('salt', String, nullable=True),
-                    sa.Column('fibre', String, nullable=True), UniqueConstraint('energy', 'fat', 'saturated_fat', 'carbohydrate', 'sugars', 'protein', 'salt', 'fibre'))
+                    sa.Column('fibre', String, nullable=True),
+                    UniqueConstraint('energy', 'fat', 'saturated_fat', 'carbohydrate', 'sugars', 'protein', 'salt',
+                                     'fibre'))
 
     op.create_table('recipes_instructions',
                     sa.Column('id', INTEGER, primary_key=True),
@@ -82,7 +84,6 @@ def upgrade():
                     sa.Column('recipe', INTEGER, ForeignKey('recipes.id', ondelete="CASCADE"), nullable=False),
                     sa.Column('image', INTEGER, ForeignKey('images.id', ondelete="CASCADE"), nullable=False),
                     UniqueConstraint('recipe', 'image'))
-
 
     op.create_table('recipes_planning',
                     sa.Column('id', INTEGER, primary_key=True),
@@ -115,7 +116,7 @@ def upgrade():
                     UniqueConstraint('product', 'ingredient'))
 
     op.create_table('product_string_ids_matching',
-                    sa.Column('id', INTEGER, ForeignKey("recipes.id"), primary_key=True),
+                    sa.Column('id', INTEGER, ForeignKey("products.id"), nullable=False, primary_key=True),
                     sa.Column('string_id', String, nullable=False),
                     UniqueConstraint('id', 'string_id'))
 

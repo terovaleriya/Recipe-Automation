@@ -1,6 +1,10 @@
+import asyncio
+import json
 from typing import List
 
 from core.domain import *
+from core.get_db_credentials import get_credentials
+from core.model import db
 
 from recipe_parser.recipe import Recipe
 
@@ -53,3 +57,30 @@ async def load_unchecked_products(ingredient_id: int, id_list: List[int]):
 
 async def load_matched_product(ingredient_id: int, product_id: int):
     await create_link_matched_ingredients_products(ingredient_id, product_id)
+
+
+async def load_product_to_db():
+    with open('../download_products/raw_all_products.txt', "r") as f:
+        json_str = f.readline()
+        all_products = json.loads(json_str)
+
+    for item in all_products:
+        image_url = item.get('thumbnail', None)
+        str_id = item.get('id')
+        name = item.get('name')
+        size = item.get('size', None)
+
+        product_id = await create_product(name, size, image_url)
+
+        await create_link_product_string_ids_matching(product_id, str_id)
+
+
+async def main():
+    credentials = get_credentials()
+    await db.set_bind(credentials)
+    await load_product_to_db()
+
+
+if __name__ == '__main__':
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(main())

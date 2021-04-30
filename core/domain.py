@@ -6,7 +6,7 @@ import asyncpg
 from core import schema, model
 
 # Links
-from core.model import db
+
 
 logging.basicConfig(filename="db_load.log", level=logging.WARNING)
 
@@ -29,13 +29,14 @@ def get_field(table: model) -> (str, str):
     elif table == model.ProductStringIdsMatching:
         field_a = "id"
         field_b = "string_id"
-    elif table == model.MatchedIngredientsProducts or model.UncheckedIngredientsProducts:
+    elif table == model.MatchedIngredientsProducts or table == model.UncheckedIngredientsProducts:
         field_a = "product"
         field_b = "ingredient"
+
     return field_a, field_b
 
 
-async def create_link(table: Any, id_a: object, id_b: object) -> object:
+async def create_link(table: Any, id_a, id_b) -> int:
     field_a, field_b = get_field(table)
     try:
         obj_data = {
@@ -78,6 +79,10 @@ async def create_link_matched_ingredients_products(id_a: int, id_b: int):
 
 async def create_link_unchecked_ingredients_products(id_a: int, id_b: int):
     await create_link(model.UncheckedIngredientsProducts, id_a, id_b)
+
+
+async def create_link_product_string_ids_matching(id_a: int, id_b: str):
+    await create_link(model.ProductStringIdsMatching, id_a, id_b)
 
 
 # PRODUCT
