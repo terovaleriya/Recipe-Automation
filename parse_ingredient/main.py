@@ -1,10 +1,10 @@
 # TODO разобраться с large/medium/small
 # TODO наверное разбираться в этом не тут
 
-from grammar import Grammar
-from ingredient_parser import parse_ingredient
+from parse_ingredient.grammar import Grammar
+from parse_ingredient.ingredient_parser import parse_ingredient
 from collections import Counter
-from known_answers import Answers
+from parse_ingredient.known_answers import Answers
 from database_phantom.database import Database
 
 
@@ -41,6 +41,7 @@ def print_parsed_ingredient(res):
     print(f"ingredient: {res['ingredient']}")
     print(f"comment: {res['comment']}")
     print()
+
 
 grammar = Grammar('grammar.txt')
 

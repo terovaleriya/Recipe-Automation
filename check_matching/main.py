@@ -26,7 +26,6 @@ ingredients_db.load_from_file('../database_phantom/db_ingredients.txt')
 products_db = Database()
 products_db.load_from_file('../database_phantom/db_products.txt')
 
-
 instructions()
 
 matching_to_check = matching_db.select_where_col_equals('checked', False)

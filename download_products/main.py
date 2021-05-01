@@ -1,5 +1,5 @@
-from JsonTemplate import *
-from DownloadFromWaitrose import *
+from download_products.JsonTemplate import *
+from download_products.DownloadFromWaitrose import *
 import json
 
 reload = False
