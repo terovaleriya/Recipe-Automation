@@ -9,7 +9,6 @@ def get_full_path(*path):
 
 
 def get_db_credentials(config: str) -> str:
-
     with open(config) as file:
         config_file = json.load(file)
 
@@ -24,4 +23,3 @@ def get_db_credentials(config: str) -> str:
 
 def get_credentials():
     return get_db_credentials(get_full_path("config.json"))
-    # return "postgresql://stepan:yourpass@localhost/mydatabasename2"
