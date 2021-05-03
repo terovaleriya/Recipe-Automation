@@ -1,5 +1,5 @@
 import logging
-from typing import Optional, Any
+from typing import Optional, Any, List
 
 import asyncpg
 
@@ -30,8 +30,8 @@ def get_field(table: model) -> (str, str):
         field_a = "id"
         field_b = "string_id"
     elif table == model.MatchedIngredientsProducts or table == model.UncheckedIngredientsProducts:
-        field_a = "product"
-        field_b = "ingredient"
+        field_a = "ingredient"
+        field_b = "product"
 
     return field_a, field_b
 
@@ -83,6 +83,20 @@ async def create_link_unchecked_ingredients_products(id_a: int, id_b: int):
 
 async def create_link_product_string_ids_matching(id_a: int, id_b: str):
     await create_link(model.ProductStringIdsMatching, id_a, id_b)
+
+
+# GETTERS
+
+async def get_unchecked_products_by_ingredient_id(ingredient_id: int) -> List[int]:
+    link_list = await model.UncheckedIngredientsProducts.query.where(
+        model.UncheckedIngredientsProducts.ingredient == ingredient_id).gino.all()
+    return [i.product for i in link_list]
+
+
+async def get_matched_products_by_ingredient_id(ingredient_id: int) -> List[int]:
+    link_list = await model.MatchedIngredientsProducts.query.where(
+        model.MatchedIngredientsProducts.ingredient == ingredient_id).gino.all()
+    return [i.product for i in link_list]
 
 
 # PRODUCT

@@ -237,6 +237,9 @@ async def main():
     await pruduct_test()
     await db.set_bind(credentials)
 
+    print(await get_unchecked_products_by_ingredient_id(7))
+
+    print(await get_matched_products_by_ingredient_id(7))
     # json_folder = "../recipe_parser/recipes_json/"
     # i = 0
     # for f in os.listdir(json_folder):
