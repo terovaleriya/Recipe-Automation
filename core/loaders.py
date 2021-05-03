@@ -7,6 +7,7 @@ from core.get_db_credentials import get_credentials
 from core.model import db
 
 from recipe_parser.recipe import Recipe
+from download_products.product import Product
 
 
 async def recipe_to_db(recipe: Recipe):
@@ -57,6 +58,12 @@ async def load_unchecked_products(ingredient_id: int, id_list: List[int]):
 
 async def load_matched_product(ingredient_id: int, product_id: int):
     await create_link_matched_ingredients_products(ingredient_id, product_id)
+
+
+async def product_to_db(product: Product):
+    product_id = await create_product(product.name, product.size, product.price, product.image_url)
+
+    await create_link_product_string_ids_matching(product_id, product.str_id)
 
 
 async def load_product_to_db():

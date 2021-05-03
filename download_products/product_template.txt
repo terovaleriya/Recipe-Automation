@@ -4,7 +4,7 @@ lineNumber: no
 productType: no
 name: yes
 size: yes
-thumbnail: no
+thumbnail: yes
 reviews: no
 currentSaleUnitPrice: yes
     quantity: yes
