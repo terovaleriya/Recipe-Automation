@@ -1,0 +1,1 @@
+{"columns": ["ingredientId", "productId"], "table": [{"ingredientId": 27293, "productId": 1722}, {"ingredientId": 27293, "productId": 1401}, {"ingredientId": 4446, "productId": null}]}

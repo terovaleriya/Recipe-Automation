@@ -1,0 +1,1 @@
+{"columns": ["ingredientId", "productId"], "table": [{"ingredientId": 1115, "productId": 5310}, {"ingredientId": 1115, "productId": 2714}, {"ingredientId": 9325, "productId": 148}, {"ingredientId": 9325, "productId": 361}, {"ingredientId": 9325, "productId": 671}, {"ingredientId": 9325, "productId": 2316}, {"ingredientId": 9325, "productId": 5229}]}
