@@ -16,10 +16,10 @@ async def main():
 
     ingredients = await get_all_ingredients()
     for item in ingredients:
-        print(item['raw_string'])
-        parsed_item = parse_ingredient(item['raw_string'], grammar)
+        print(item.raw_string)
+        parsed_item = parse_ingredient(item.raw_string, grammar)
         await update_ingredient_by_id(
-            ingredient_id=item['id'],
+            ingredient_id=item.id,
             name=parsed_item['ingredient'],
             quantity=parsed_item['raw_quantity'],
             comment=parsed_item['comment']

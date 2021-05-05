@@ -3,6 +3,7 @@ from typing import Set, List
 
 from core.domain import create_link_unchecked_ingredients_products
 from core.get_db_credentials import get_credentials
+from core.loaders import load_unchecked_products
 from core.model import db, Products
 from get_all_items.get_all_items import get_all_ingredients, get_all_products
 from match_products_ingredients.nltk_preprocess import nltk_preprocess
@@ -40,10 +41,9 @@ async def main():
         for match_product in matching:
             print(match_product.id, match_product.name)
         print()
-        for match_product in matching:
-            await create_link_unchecked_ingredients_products(match_product.id, item.id)
-        # this works incorrectly
-        # load_unchecked_products(item.id, [match_product.id for match_product in matching])
+        # for match_product in matching:
+        #     await create_link_unchecked_ingredients_products(match_product.id, item.id)
+        await load_unchecked_products(item.id, [match_product.id for match_product in matching])
 
 if __name__ == '__main__':
     loop = asyncio.get_event_loop()
