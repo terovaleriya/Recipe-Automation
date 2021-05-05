@@ -7,7 +7,7 @@ from core.domain import get_matched_products_by_ingredient_id, get_unchecked_pro
 from core.get_db_credentials import get_credentials
 from core.model import db
 from database_phantom.database import Database
-from get_all_items.get_all_items import get_all_ingredients
+from core.get_all_items import get_all_ingredients
 
 SHUFFLE = True
 

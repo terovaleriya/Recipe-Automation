@@ -3,7 +3,7 @@ import asyncio
 from core.domain import update_ingredient_by_id
 from core.get_db_credentials import get_credentials
 from core.model import db
-from get_all_items.get_all_items import get_all_ingredients
+from core.get_all_items import get_all_ingredients
 from parse_ingredient.grammar import Grammar
 from parse_ingredient.ingredient_parser import parse_ingredient
 

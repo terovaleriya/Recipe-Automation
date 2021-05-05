@@ -5,7 +5,7 @@ from core.domain import create_link_unchecked_ingredients_products
 from core.get_db_credentials import get_credentials
 from core.loaders import load_unchecked_products
 from core.model import db, Products
-from get_all_items.get_all_items import get_all_ingredients, get_all_products
+from core.get_all_items import get_all_ingredients, get_all_products
 from match_products_ingredients.nltk_preprocess import nltk_preprocess
 
 
