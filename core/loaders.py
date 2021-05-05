@@ -66,28 +66,9 @@ async def product_to_db(product: Product):
     await create_link_product_string_ids_matching(product_id, product.str_id)
 
 
-async def load_product_to_db():
-    with open('../download_products/raw_all_products.txt', "r") as f:
-        json_str = f.readline()
-        all_products = json.loads(json_str)
-
-    for item in all_products:
-        str_id = item.get('id')
-
-        name = item.get('name')
-        size = item.get('size', None)
-        price = item.get('price', None)
-        image_url = item.get('thumbnail', None)
-
-        product_id = await create_product(name, size, price, image_url)
-
-        await create_link_product_string_ids_matching(product_id, str_id)
-
-
 async def main():
     credentials = get_credentials()
     await db.set_bind(credentials)
-    await load_product_to_db()
 
 
 if __name__ == '__main__':
