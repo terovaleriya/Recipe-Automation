@@ -18,4 +18,4 @@ OTHER = per\_kg | each | a\_pinch\_of | pinch | pinch\_of
 CONTAINER = pack | packs | tub | tubs | bag | bags | jar | jars | can | cans
 ITEM = QUANTITY CONTAINER
 
-RESULT = QUANTITY | ITEM | OTHER
+RESULT = QUANTITY | ITEM | OTHER | UOM
